@@ -1,0 +1,797 @@
+/* =======================================================
+   CONFIGURAÇÕES GERAIS E FONTES (doacao.css)
+   ======================================================= */
+
+   html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --fonte-principal: 'Poppins', sans-serif;
+    --fonte-textos: 'Open Sans', sans-serif;
+    --fonte-titulos: 'Playfair Display', serif; /* Fonte elegante do outro banner */
+    --cor-destaque: #e63946; /* Vermelho Doação */
+    --cor-detalhe-laranja: #ff8e32; /* Cor dos detalhes do layout anterior */
+    --cor-primaria: #da2020; /* Uma cor quente e chamativa para os botões de doação */
+    --cor-secundaria: #2d3436; /* Um tom escuro e elegante para os textos principais */
+    --cor-fundo-claro: #f9f9f9; /* Fundo para seções de respiro */
+    --cor-texto-p: #636e72; /* Cor mais suave para parágrafos longos, não cansa a vista */
+    --cor-texto-escuro: #1a1a1a;
+}
+
+
+/* =========================================
+   2. RESET E CONFIGURAÇÕES GERAIS
+   ========================================= */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte-textos);
+    color: var(--cor-texto-p);
+    background-color: #ffffff;
+    /* Isso garante que a rolagem da página seja suave ao clicar em um link */
+    scroll-behavior: smooth; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fonte-titulos);
+    color: var(--cor-secundaria);
+    font-weight: 700;
+}
+
+/* Retirando sublinhados de links por padrão */
+a {
+    text-decoration: none;
+    transition: all 0.3s ease-in-out; /* Toda mudança de cor em link será suave */
+}
+
+/* =========================================
+    TOPBAR (Barra Superior) 
+   ========================================= */
+.topbar {
+    background-color: #fafafa; /* Cinza bem clarinho, super elegante */
+    font-size: 0.69rem;
+    letter-spacing: 0.5px;
+}
+
+/* O Segredo para arredar pro centro: limitamos a largura máxima do container */
+.container-topbar {
+    max-width: 950px; 
+}
+
+/* Forçando a cor preta/bem escura nas informações */
+.texto-escuro {
+    color: #302d2d !important; 
+}
+
+/* Mantemos o ícone colorido com a cor primária para não ficar tudo "morto" */
+.icone-destaque {
+    color: #292828 !important;
+    
+
+}
+
+.topbar-link {
+    transition: color 0.3s ease-in-out;
+}
+
+/* O hover (passar o mouse) muda para a cor primária para dar vida e interatividade */
+.topbar-link:hover, .topbar-icon:hover i {
+    color: var(--cor-primaria) !important;
+}
+
+.topbar-icon i {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.topbar-icon:hover i { 
+    transform: translateY(-3px); 
+}
+
+/* =======================================================
+   BLOCO 2: NAVBAR E MENU PRINCIPAL
+   ======================================================= */
+
+/* Estilo dos Links do Menu (Fonte Oswald, letra pequena, maiúscula) */
+.menu-link {
+    font-family: var(--fonte-titulos);
+    font-size: 0.68rem !important; 
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--cor-secundaria) !important;
+    padding: 8px 10px !important;
+    position: relative; /* Segredo para a linha funcionar */
+    transition: all 0.3s ease;
+}
+
+/* =======================================================
+   A MORTE DO FUNDO CINZA E A NOVA BARRINHA SINGELA
+   ======================================================= */
+
+/* 1. Menu Principal: Zero fundo e criando a barrinha cinza claro */
+.menu-link:hover, .menu-link:focus {
+    background-color: transparent !important; /* Mata o fundo cinza nativo */
+    color: var(--cor-texto-escuro) !important; /* Mantém a letra preta */
+    opacity: 1 !important; /* Tira aquele efeito de ficar transparente */
+}
+
+/* Criando a barrinha cinza claro invisível embaixo das palavras do menu */
+.menu-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px; /* Altura da barrinha */
+    left: 10px; /* Alinhado certinho com o texto */
+    width: 0; /* Começa invisível */
+    height: 2px; /* Espessura fina e elegante */
+    background-color: #ec1616; /* Cinza bem claro */
+    transition: width 0.3s ease; /* Animação suave */
+}
+
+/* Quando passa o mouse, a barrinha cinza claro aparece */
+.menu-link:hover::after {
+    width: 20px; /* Tamanho bem singelo, só um detalhe */
+}
+
+
+/* 2. Janelinhas (Causas e Páginas): Zero fundo e barrinha cinza claro */
+
+@media (min-width: 992px) {
+    .navbar .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+.dropdown-agape {
+    border-top: 2px solid var(--cor-primaria) !important;
+}
+
+.dropdown-agape .dropdown-item {
+    font-family: var(--fonte-titulos);
+    font-size: 0.80rem;
+    text-transform: uppercase;
+    color: var(--cor-secundaria) !important;
+    padding: 8px 20px;
+}
+
+.dropdown-agape .dropdown-item:hover,
+.dropdown-agape .dropdown-item:focus,
+.dropdown-agape .dropdown-item.active {
+    background-color: transparent !important; /* Mata o fundo cinza maldito */
+    color: var(--cor-texto-escuro) !important; /* Mantém a letra preta */
+    position: relative; /* Necessário para a barrinha funcionar aqui dentro */
+}
+
+/* Criando a barrinha cinza claro invisível nas opções da janelinha */
+.dropdown-agape .dropdown-item::after {
+    content: '';
+    position: absolute;
+    bottom: 5px; 
+    left: 20px;
+    width: 0;
+    height: 2px;
+    background-color: #ec1616; /* O mesmo cinza claro */
+    transition: width 0.3s ease;
+}
+
+/* Quando passa o mouse na opção, a barrinha aparece */
+.dropdown-agape .dropdown-item:hover::after {
+    width: 15px; /* Ainda menor, bem minimalista */
+}
+/* --- BOTÃO DOE AGORA --- */
+.btn-doe {
+    background-color: #ff8e32;
+    color: #ffffff;
+    font-family: var(--fonte-titulos);
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+.btn-doe:hover {
+    background-color: #f80000; /* Fica preto ao passar o mouse */
+    color: #ffffff;
+}
+
+
+/* =======================================================
+   BANNER PRINCIPAL IMERSIVO (Efeito Ken Burns)
+   ======================================================= */
+
+/* 1. Estrutura Base (Isolada para a página de doação) */
+.carousel-doacao {
+    height: 455px; /* Você pode mudar essa altura à vontade aqui */
+    position: relative;
+    overflow: hidden;
+    background-color: #000; /* Fundo preto para não dar flash branco na troca */
+}
+
+.carousel-doacao .carousel-inner, 
+.carousel-doacao .carousel-item {
+    height: 100%;
+}
+
+/* 2. O Segredo do Zoom Lento (Ken Burns Effect) */
+.hero-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    transform: scale(1); 
+    transition: transform 10s linear; /* Zoom suave de 10 segundos */
+}
+
+/* Quando o slide fica ativo, a imagem cresce */
+.carousel-item.active .hero-image {
+    transform: scale(1.2); 
+}
+
+/* 3. Overlay Escuro (Para o texto aparecer com clareza) */
+.carousel-item::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% de preto sobre a foto */
+    z-index: 1;
+}
+
+/* 4. Estilização do Texto (Caption) */
+.hero-caption {
+    z-index: 2;
+    left: 3% !important; /* Colado mais à esquerda conforme o outro layout */
+    text-align: left;
+    max-width: 800px;
+}
+
+/* Dizer 1 (A legenda pequena em cima) */
+.hero-legend {
+    font-family: var(--fonte-principal);
+    font-size: 0.9rem;
+    color: var(--cor-detalhe-laranja); /* Usando o laranja do destaque */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* Dizer 2 (O Título imponente em Playfair Display) */
+.hero-title {
+    font-family: var(--fonte-titulos);
+    font-size: 3.5rem; 
+    font-weight: 700; 
+    color: #ffffff;
+    line-height: 1.1;
+    margin-top: 5px;
+    max-width: 600px;
+}
+
+/* 5. Botão de Doação (Estilo do Banner Anterior) */
+.btn-hero {
+    margin-top: 25px;
+    background-color: transparent;
+    border: 2px solid var(--cor-detalhe-laranja);
+    color: #ffffff;
+    font-family: var(--fonte-principal);
+    font-weight: 600;
+    padding: 12px 30px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-radius: 6px; 
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-hero:hover {
+    background-color: var(--cor-detalhe-laranja);
+    color: #000 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 142, 50, 0.3);
+}
+
+/* =========================================
+   RESPONSIVIDADE (Mobile)
+   ========================================= */
+@media (max-width: 768px) {
+    .carousel-doacao {
+        height: 500px;
+    }
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .hero-caption {
+        left: 5% !important;
+    }
+}
+
+/* --- BLOCO DE IMPACTO --- */
+.secao-impacto {
+    background-color: #ffffff;
+}
+
+.subtitulo-impacto {
+    color: var(--cor-detalhe-laranja);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+}
+
+.titulo-impacto {
+    font-family: var(--fonte-titulos);
+    font-size: 2.5rem;
+    color: #222;
+    margin-top: 10px;
+}
+
+.texto-impacto {
+    color: #666;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+/* --- ESTILO DOS CARDS DE VALOR --- */
+.card-doacao-valor {
+    background: #fdfdfd;
+    border: 2px solid #eee;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.card-doacao-valor:hover {
+    border-color: var(--cor-detalhe-laranja);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.card-doacao-valor.destaque {
+    border-color: var(--cor-detalhe-laranja);
+    background-color: #fffaf5;
+}
+
+.valor-sugerido {
+    font-family: var(--fonte-titulos);
+    font-size: 2.2rem;
+    color: var(--cor-destaque);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.badge-destaque {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--cor-detalhe-laranja);
+    color: white;
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.btn-doe-agora {
+    background-color: #222;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.btn-doe-agora:hover {
+    background-color: var(--cor-detalhe-laranja);
+    color: white;
+}
+
+.icone-selo {
+    font-size: 2.5rem;
+    color: #28a745; /* Verde de segurança */
+}
+
+/* --- BLOCO EXPANSÃO E CURSOS --- */
+.expansao-agape {
+    background-color: #fefefe;
+    padding: 80px 0;
+}
+
+.tag-projeto {
+    color: var(--cor-destaque);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.titulo-secao {
+    font-family: var(--fonte-titulos);
+    font-size: 2.8rem;
+    color: #1a1a1a;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.texto-descricao {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+/* --- ESTILO DA FOTO E CARD FLUTUANTE --- */
+.moldura-foto {
+    position: relative;
+    padding-right: 30px;
+}
+
+.foto-principal {
+    border-radius: 30px 100px 30px 30px; /* Estilo moderno assimétrico */
+    box-shadow: 20px 20px 0px var(--cor-detalhe-laranja); /* "Sombra" sólida estilizada */
+    object-fit: cover;
+    height: 450px;
+    width: 100%;
+}
+
+.card-flutuante {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    background: #ffffff;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-left: 5px solid var(--cor-destaque);
+    max-width: 250px;
+}
+
+.card-flutuante i {
+    font-size: 2rem;
+    color: var(--cor-detalhe-laranja);
+}
+
+.card-flutuante span {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* --- LISTA E BOTÕES --- */
+.lista-metas {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-metas li {
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #444;
+}
+
+.lista-metas i {
+    color: #28a745;
+    margin-right: 10px;
+}
+
+.btn-principal-doar {
+    background-color: var(--cor-destaque);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: 0.3s;
+    display: inline-block;
+    border: none;
+}
+
+.btn-saiba-mais {
+    background-color: transparent;
+    border: 2px solid #333;
+    color: #333;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-block;
+}
+
+.btn-principal-doar:hover {
+    background-color: #000;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Responsividade */
+@media (max-width: 991px) {
+    .titulo-secao { font-size: 2.2rem; }
+    .foto-principal { height: 350px; margin-bottom: 40px; }
+}
+
+/* --- BLOCO DOAÇÃO DE MATERIAIS --- */
+.doacao-materiais {
+    background-color: #fff;
+}
+
+.card-material {
+    background: #fafafa;
+    border-radius: 20px;
+    border-left: 6px solid var(--cor-detalhe-laranja);
+    transition: 0.3s;
+}
+
+.card-material:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.icone-categoria {
+    font-size: 2.5rem;
+    color: var(--cor-destaque);
+}
+
+.card-material h4 {
+    font-family: var(--fonte-titulos);
+    font-weight: 700;
+}
+
+.lista-itens {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.lista-itens li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.lista-itens li::before {
+    content: "→";
+    color: var(--cor-detalhe-laranja);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* --- BLOCO ENDEREÇO --- */
+.bloco-endereco {
+    background: #f1f3f5;
+    border-radius: 15px;
+}
+
+.icone-envio {
+    font-size: 3rem;
+    color: #6c757d;
+}
+
+.btn-contato-entrega {
+    background-color: #333;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-contato-entrega:hover {
+    background-color: var(--cor-detalhe-laranja);
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =======================================================
+   RODAPÉ (FOOTER) PRINCIPAL DO SITE
+   ======================================================= */
+.rodape-agape {
+    /* O linear-gradient cria uma camada escura por cima da foto para o texto aparecer */
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+                url('assets/rodape.png');
+    
+    /* Faz a imagem cobrir o rodapé inteiro sem sobrar espaço */
+    background-size: cover;
+    
+    /* Deixa a imagem fixa ou centralizada */
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    padding-top: 60px;
+    color: #cccccc;
+    font-family: var(--fonte-texto);
+    background-attachment: fixed;
+}
+
+/* Títulos do Rodapé (Sobre Nós, Explore, etc) */
+.rodape-titulo {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Logo em texto */
+.rodape-logo {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Textinhos normais */
+.rodape-texto, .rodape-contato li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Redes Sociais (Bolinhas) */
+.rodape-social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #555555;
+    color: #cccccc;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.rodape-social a:hover {
+    background-color: #d91e18; /* Fica vermelho ao passar o mouse */
+    border-color: #d91e18;
+    color: #ffffff;
+}
+
+/* Links das Listas */
+.rodape-links li {
+    margin-bottom: 12px;
+}
+
+.rodape-links a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.rodape-links a:hover {
+    color: #ffffff; /* Fica branco ao passar o mouse */
+    text-decoration: underline;
+}
+
+/* A Linha Vermelha que divide o rodapé */
+.rodape-divisor {
+    border-top: 1px solid #d91e18; /* Vermelhão igual ao vídeo */
+    opacity: 1; /* Tira a transparência padrão do hr */
+    margin: 0;
+}
+
+/* Área de Newsletter */
+.rodape-newsletter input {
+    background-color: transparent;
+    border: 1px solid #555555;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 4px;
+}
+
+.rodape-newsletter input:focus {
+    background-color: rgba(255,255,255,0.05);
+    border-color: #36b9cc;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+/* O Botão Azul Ciano */
+.btn-newsletter {
+    background-color: #48c9b0; 
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-newsletter:hover {
+    background-color: #1abc9c;
+    color: #ffffff;
+}
+
+/* Copyright lá no finalzinho */
+.rodape-copyright {
+    font-size: 0.85rem;
+    color: #888888;
+}
+.rodape-copyright strong {
+    color: #cccccc;
+}
+
+/* Estilo das Abas de Cadastro */
+.nav-pills .nav-link {
+    color: #333;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 10px 25px;
+    margin: 0 5px;
+    background: #f8f9fa;
+    transition: 0.3s;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #d91e18 !important; /* Vermelho Ágape */
+    color: white !important;
+}
+
+.tab-content {
+    border-top: 4px solid #d91e18;
+}
+
+.titulo-sessao {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+/* Estilo do FAQ Sanfona */
+.accordion-button:not(.collapsed) {
+    background-color: #fff5f5; /* Um fundinho vermelho bem clarinho quando aberto */
+    color: #d91e18; /* Texto vermelho ao abrir */
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(217, 30, 24, 0.1);
+}
+
+.accordion-button {
+    padding: 20px;
+    font-size: 1.05rem;
+}
+
+.accordion-body {
+    padding: 20px 25px;
+    line-height: 1.6;
+    background-color: #fafafa;
+}
+
+.titulo-sessao-faq {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #333;
+}
+
+/* FIM DO RODAPÉ */

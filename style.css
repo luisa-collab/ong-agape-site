@@ -1,0 +1,1417 @@
+/* =========================================
+   1. VARIÁVEIS GLOBAIS E PALETA DE CORES
+   ========================================= */
+
+   html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --cor-primaria: #da2020; /* Uma cor quente e chamativa para os botões de doação */
+    --cor-secundaria: #2d3436; /* Um tom escuro e elegante para os textos principais */
+    --cor-fundo-claro: #f9f9f9; /* Fundo para seções de respiro */
+    --cor-texto-p: #636e72; /* Cor mais suave para parágrafos longos, não cansa a vista */
+    --cor-texto-escuro: #1a1a1a;
+    --fonte-titulos: 'Poppins', sans-serif;
+    --fonte-textos: 'Open Sans', sans-serif;
+}
+
+/* =========================================
+   2. RESET E CONFIGURAÇÕES GERAIS
+   ========================================= */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte-textos);
+    color: var(--cor-texto-p);
+    background-color: #ffffff;
+    /* Isso garante que a rolagem da página seja suave ao clicar em um link */
+    scroll-behavior: smooth; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fonte-titulos);
+    color: var(--cor-secundaria);
+    font-weight: 700;
+}
+
+/* Retirando sublinhados de links por padrão */
+a {
+    text-decoration: none;
+    transition: all 0.3s ease-in-out; /* Toda mudança de cor em link será suave */
+}
+
+/* =========================================
+    TOPBAR (Barra Superior) 
+   ========================================= */
+.topbar {
+    background-color: #fafafa; /* Cinza bem clarinho, super elegante */
+    font-size: 0.69rem;
+    letter-spacing: 0.5px;
+}
+
+/* O Segredo para arredar pro centro: limitamos a largura máxima do container */
+.container-topbar {
+    max-width: 950px; 
+}
+
+/* Forçando a cor preta/bem escura nas informações */
+.texto-escuro {
+    color: #302d2d !important; 
+}
+
+/* Mantemos o ícone colorido com a cor primária para não ficar tudo "morto" */
+.icone-destaque {
+    color: #292828 !important;
+    
+
+}
+
+.topbar-link {
+    transition: color 0.3s ease-in-out;
+}
+
+/* O hover (passar o mouse) muda para a cor primária para dar vida e interatividade */
+.topbar-link:hover, .topbar-icon:hover i {
+    color: var(--cor-primaria) !important;
+}
+
+.topbar-icon i {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.topbar-icon:hover i { 
+    transform: translateY(-3px); 
+}
+
+/* =======================================================
+   BLOCO 2: NAVBAR E MENU PRINCIPAL
+   ======================================================= */
+
+/* Estilo dos Links do Menu (Fonte Oswald, letra pequena, maiúscula) */
+.menu-link {
+    font-family: var(--fonte-titulos);
+    font-size: 0.68rem !important; 
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--cor-secundaria) !important;
+    padding: 8px 10px !important;
+    position: relative; /* Segredo para a linha funcionar */
+    transition: all 0.3s ease;
+}
+
+/* =======================================================
+   A MORTE DO FUNDO CINZA E A NOVA BARRINHA SINGELA
+   ======================================================= */
+
+/* 1. Menu Principal: Zero fundo e criando a barrinha cinza claro */
+.menu-link:hover, .menu-link:focus {
+    background-color: transparent !important; /* Mata o fundo cinza nativo */
+    color: var(--cor-texto-escuro) !important; /* Mantém a letra preta */
+    opacity: 1 !important; /* Tira aquele efeito de ficar transparente */
+}
+
+/* Criando a barrinha cinza claro invisível embaixo das palavras do menu */
+.menu-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px; /* Altura da barrinha */
+    left: 10px; /* Alinhado certinho com o texto */
+    width: 0; /* Começa invisível */
+    height: 2px; /* Espessura fina e elegante */
+    background-color: #ec1616; /* Cinza bem claro */
+    transition: width 0.3s ease; /* Animação suave */
+}
+
+/* Quando passa o mouse, a barrinha cinza claro aparece */
+.menu-link:hover::after {
+    width: 20px; /* Tamanho bem singelo, só um detalhe */
+}
+
+
+/* 2. Janelinhas (Causas e Páginas): Zero fundo e barrinha cinza claro */
+
+@media (min-width: 992px) {
+    .navbar .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+.dropdown-agape {
+    border-top: 2px solid var(--cor-primaria) !important;
+}
+
+.dropdown-agape .dropdown-item {
+    font-family: var(--fonte-titulos);
+    font-size: 0.80rem;
+    text-transform: uppercase;
+    color: var(--cor-secundaria) !important;
+    padding: 8px 20px;
+}
+
+.dropdown-agape .dropdown-item:hover,
+.dropdown-agape .dropdown-item:focus,
+.dropdown-agape .dropdown-item.active {
+    background-color: transparent !important; /* Mata o fundo cinza maldito */
+    color: var(--cor-texto-escuro) !important; /* Mantém a letra preta */
+    position: relative; /* Necessário para a barrinha funcionar aqui dentro */
+}
+
+/* Criando a barrinha cinza claro invisível nas opções da janelinha */
+.dropdown-agape .dropdown-item::after {
+    content: '';
+    position: absolute;
+    bottom: 5px; 
+    left: 20px;
+    width: 0;
+    height: 2px;
+    background-color: #ec1616; /* O mesmo cinza claro */
+    transition: width 0.3s ease;
+}
+
+/* Quando passa o mouse na opção, a barrinha aparece */
+.dropdown-agape .dropdown-item:hover::after {
+    width: 15px; /* Ainda menor, bem minimalista */
+}
+/* --- BOTÃO DOE AGORA --- */
+.btn-doe {
+    background-color: #ff8e32;
+    color: #ffffff;
+    font-family: var(--fonte-titulos);
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+.btn-doe:hover {
+    background-color: #f80000; /* Fica preto ao passar o mouse */
+    color: #ffffff;
+}
+
+/* =======================================================
+   BLOCO 3: HERO SECTION (Banner Principal Imersivo)
+   ======================================================= */
+
+/* 1. Estrutura Base do Carrossel (Totalmente Isolado) */
+.carousel-agape {
+    height: 90vh; /* Altura de quase toda a tela abaixo da navbar */
+    position: relative;
+    overflow: hidden;
+}
+
+/* 2. O Segredo do Zoom Lento (Ken Burns Effect) */
+/* Criamos uma div só para a imagem de fundo para animar apenas ela, sem mexer no texto */
+.hero-image {
+    background-size: cover;
+    background-position: center;
+    transform: scale(1); /* Ponto de partida */
+    transition: transform 10s linear; /* Animação de zoom de 10 segundos */
+}
+
+/* Quando o slide fica ativo (active), aplicamos o zoom */
+.carousel-item.active .hero-image {
+    transform: scale(1.3); /* Zoom de 10% */
+}
+
+/* Overlay Escuro para contraste do texto */
+.carousel-item::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Preto com 40% de transparência */
+    z-index: 1; /* Fica atrás do texto (z-index: 2) */
+}
+
+/* 3. Estilização do Texto Overlay */
+.hero-caption {
+    z-index: 2;
+    /* O SEGREDO AQUI: 'left' controla a distância da borda esquerda. 
+       O padrão do Bootstrap é 15%. Colocamos 5% para colar mais na esquerda. */
+    left: 5% !important; 
+    padding-left: 0 !important; /* Zeramos o padding para o 'left' mandar sozinho */
+    padding-right: 15%; 
+}
+
+/* Dizer 1 (Médio/Pequeno) */
+.hero-legend {
+    font-family: var(--fonte-titulos);
+    font-size: 0.85rem;
+    color: #ff8e32;
+    opacity: 1;
+    letter-spacing: 1.5px; /* Deixa as letras um pouco mais separadas */
+}
+
+/* Dizer 2 (Grande, Chamativo, Estilizado - Playfair Display) */
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.1rem; 
+    font-weight: 700; 
+    color: #ffffff;
+    line-height: 1.2; /* Deixa as linhas mais próximas para um visual mais compacto */
+    margin-top: 8px; /* Um espacinho entre o título e o dizer 1 */
+    max-width: 500px;
+}
+
+/* Botão Envolva-se (Com as bordas redondas) */
+.btn-hero {
+    background-color: transparent;
+    border: 2px solid #ff8e32;
+    color: #ffffff;
+    font-family: var(--fonte-titulos);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-radius: 6px; 
+    transition: all 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: #ff8e32;
+    color: var(--cor-secundaria) !important;
+}
+
+/* =======================================================
+   REGRAS DE ANIMAÇÃO (O que faz o texto e o botão aparecerem)
+   ======================================================= */
+/* 1. Tira tudo da tela inicialmente */
+.carousel-item .hero-legend,
+.carousel-item .hero-title,
+.carousel-item .btn-hero {
+    opacity: 0;
+    animation-duration: 0.8s; 
+    animation-timing-function: ease-out; 
+}
+
+/* 2. Aplica a animação em sequência no slide ativo */
+.carousel-item.active .hero-legend {
+    animation-name: slideInDownText; 
+    animation-delay: 0.2s; 
+    animation-fill-mode: forwards;
+}
+
+.carousel-item.active .hero-title {
+    animation-name: slideInDownText; 
+    animation-delay: 0.4s; 
+    animation-fill-mode: forwards;
+}
+
+.carousel-item.active .btn-hero {
+    animation-name: slideInDownText; 
+    animation-delay: 0.6s; /* Faz o botão aparecer por último */
+    animation-fill-mode: forwards;
+}
+
+/* 3. O motor da animação (Caindo de cima) */
+@keyframes slideInDownText {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =======================================================
+   BLOCO 4: SOBRE NÓS E MOSAICO
+   ======================================================= */
+.secao-sobre {
+    background-color: #f4f8fa; /* Aquele fundo cinza/azulado bem claro e chique */
+    overflow: hidden; /* Evita que o efeito de hover vaze a tela */
+}
+
+/* --- LADO ESQUERDO: TEXTOS --- */
+/* Tamanho do seu desenho personalizado da árvore */
+.minha-arvore {
+    width: 85px; /* Ajuste esse número para deixar o desenho maior ou menor */
+    height: auto; /* Mantém a proporção do seu desenho para não achatar */
+    object-fit: contain;
+}
+
+.texto-arvore {
+    font-family: var(--fonte-texto);
+    font-size: 0.75rem;
+    color: #555555;
+    letter-spacing: 1px;
+}
+
+.titulo-sobre {
+    font-family: 'Playfair Display', serif; /* A mesma fonte elegante do Banner! */
+    font-size: 3.2rem;
+    font-weight: 700; 
+    color: #2c3e50;
+    line-height: 1.2;
+}
+
+/* --- LADO ESQUERDO: VÍDEO --- */
+.video-box {
+    width: 200px; /* Largura fixa para não espremer o texto */
+    flex-shrink: 0; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px; height: 50px;
+    background-color: rgba(255, 255, 255, 0.4); /* Fundo branco transparente */
+    backdrop-filter: blur(4px); /* Efeito de vidro borrado super moderno */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+    background-color: var(--cor-primaria);
+    transform: translate(-50%, -50%) scale(1.15); /* Cresce ao passar o mouse */
+    color: #ffffff;
+}
+
+.texto-video p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--cor-texto-p);
+}
+
+.link-descubra {
+    color: #2c3e50;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* Aquela linhazinha vermelha embaixo do link */
+.link-descubra::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 30px; 
+    height: 2px;
+    background-color: var(--cor-primaria);
+    transition: width 0.3s ease;
+}
+
+.link-descubra:hover::after {
+    width: 100%; /* A linha cresce quando passa o mouse */
+}
+.link-descubra:hover {
+    color: var(--cor-primaria);
+}
+
+/* --- LADO DIREITO: O MOSAICO INTERATIVO --- */
+.mosaico-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas exatamente iguais */
+    grid-template-rows: 1fr 1fr;    /* 2 linhas exatamente iguais */
+    aspect-ratio: 1 / 1;            /* O SEGREDO: Força a caixa inteira a ser um quadrado 1 por 1 */
+    max-width: 380px;
+    margin-left: 100px; /* Empurra 100 pixels para a direita */
+}
+
+/* Cores idênticas à imagem */
+.bg-laranja { background-color: #f3e416d2; }
+.bg-azul-claro { background-color: #4bcefac9; }
+.bg-azul-escuro { background-color: #19dd3ae3; }
+.bg-vermelho { background-color: #e77517f6; }
+
+.mosaico-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none !important;
+    color: #ffffff !important;
+    transition: all 0.4s ease; /* Animação suave */
+    position: relative;
+    z-index: 1; /* Fica no fundo inicialmente */
+}
+
+.mosaico-item h3 {
+    font-family: 'Playfair Display', serif; /* Mantendo a elegância */
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* O Segredo do "Encaixe": Quando passa o mouse, a peça cresce e projeta sombra */
+.mosaico-item:hover {
+    transform: scale(0.93); /* Aumenta a peça um pouco */
+    z-index: 10; /* Traz a peça para a frente das outras */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3); /* Dá um super destaque */
+    
+}
+
+/* =======================================================
+   BLOCO 5: LATEST CAUSES (Últimas Causas)
+   ======================================================= */
+.secao-causas {
+    background-color: #ffffff;
+    margin-top: -45px;
+}
+
+/* --- Cabeçalho --- */
+.titulo-secao {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.subtitulo-secao {
+    font-family: var(--fonte-texto);
+    color: #636e72;
+    font-size: 0.5rem;
+    letter-spacing: 1px;
+}
+
+/* --- O Cartão --- */
+.card-causa {
+    background-color: #ffffff;
+    border: 1px solid #868585; /* Bordinha cinza bem sutil do Kausid */
+    transition: all 0.3s ease;
+    max-width: 280px; /* Trava a largura máxima do cartão. Mude para 320px se quiser menor ainda. */
+    margin: 0 auto; /* Centraliza o cartão dentro da coluna dele */
+}
+
+/* Efeito ao passar o mouse no cartão inteiro (sombra elegante) */
+.card-causa:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* --- Imagem e Porcentagem Flutuante --- */
+.imagem-causa-wrapper {
+    position: relative;
+}
+
+.imagem-causa-wrapper img {
+    height: 170px; /* Trava a altura das imagens para ficarem todas iguais */
+    object-fit: cover;
+}
+
+/* A caixinha azul que fica no meio do caminho */
+.badge-porcentagem {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%); /* O segredo para cortar a borda meio a meio */
+    background-color: #1fa8e7; /* Laranja corporativo */
+    color: #ffffff;
+    padding: 2px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 2px;
+}
+
+/* --- Textos do Cartão --- */
+.titulo-causa {
+    margin-top: 1px;
+}
+
+.titulo-causa a {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Efeito do vídeo: Título fica vermelho (cor primária) ao passar o mouse */
+.titulo-causa a:hover {
+    color: #1fa8e7;
+}
+s
+.categoria-causa {
+    color: #95a5a6;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.texto-causa {
+    color: var(--cor-texto-p);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- Metas (Goal e Raised) --- */
+.stats-causa span {
+    font-size: 0.75rem;
+    color: #2c3e50;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.stats-causa i {
+    color: #1fa8e7; /* Ícones azul ciano idênticos ao vídeo */
+    margin-right: 3px;
+    font-size: 0.85rem;
+}
+
+/* --- Botão Doe Agora no Rodapé --- */
+.btn-doar-card {
+    background-color: #28cdeb; /* Fica escuro ao passar o mouse */;
+    color: #ffffff;
+    border-radius: 0; /* Totalmente quadrado para colar nas bordas do cartão */
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-doar-card:hover {
+    color: #0c0404;
+}
+
+/* =======================================================
+   BLOCO 6: PARCERIAS E APOIADORES (Fundo Inteiro + Quadrado)
+   ======================================================= */
+
+/* A Seção Inteira com a Foto de Fundo */
+
+.secao-parceiros-full {
+    background-color: #f4f8fa; /* Cor da parte de baixo (onde a foto não alcança) */
+    background-image: url('assets/img-Inicio/fundoApoiadores.png');
+    
+    /* A MÁGICA AQUI: 100% de largura, mas a foto acaba em 80% da altura do bloco! */
+    background-size: 100% 66%; 
+    background-position: top center;
+    background-repeat: no-repeat; /* Impede a foto de se multiplicar para baixo */
+    position: relative;
+    overflow: hidden;
+}
+
+/* 2. A Película Escura (Acompanha o corte da foto) */
+.overlay-parceiros {
+    position: absolute;
+    top: 0; /* Começa do topo da seção para cobrir a foto inteira */
+    left: 0;
+    right: 0;
+    height: 66%; /* Tem que ter a mesma porcentagem da foto ali de cima */
+    background-color: rgba(30, 30, 30, 0.88); /* Fundo opaco */
+    z-index: 1; /* Camada de baixo */
+
+}
+
+/* 3. A Caixa Quadrada (Descendo para "vazar" da foto) */
+.caixa-carrossel-quadrada {
+    position: relative;
+    width: 100%;
+    max-width: 360px; 
+    aspect-ratio: 1 / 1; 
+    
+    /* Empurramos a caixa um pouco para baixo para ela cruzar a linha de corte da foto */
+    margin-top: -10px; 
+    z-index: 10; /* Fica acima da película escura */
+}
+
+/* --- LADO ESQUERDO: TEXTOS --- */
+
+
+.titulo-parceiros {
+    position: relative; /* Adicionado */
+    z-index: 10; /* Adicionado para pular à frente da película */
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #f35c16b0;
+    margin-top: -145px;
+    z-index: 10px;
+}
+
+.texto-parceiros {
+    position: relative; /* Adicionado */
+    z-index: 10; /* Adicionado */
+    font-family: var(--fonte-texto);
+    font-size: 1.03rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* --- LADO DIREITO: A CAIXA QUADRADA --- */
+
+
+.img-quadrada {
+    object-fit: cover; /* Garante que as fotos preencham o quadrado sem achatar */
+    
+}
+
+/* As Setas Redondas por cima do Quadrado */
+.seta-parceiros {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #2c3e50;
+    border: none;
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.seta-parceiros:hover {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+}
+
+/* Deixando as setas metade para fora, metade para dentro do quadrado */
+.seta-parceiros.prev { left: -25px; }
+.seta-parceiros.next { right: -25px; }
+
+/* Proteção para Celular */
+@media (max-width: 991px) {
+    .caixa-carrossel-quadrada { max-width: 100%; margin-top: 30px; }
+    .seta-parceiros.prev { left: 10px; } /* Setas pra dentro no celular para não sumirem */
+    .seta-parceiros.next { right: 10px; }
+}
+
+/* =======================================================
+   BLOCO 7: PRESTAÇÃO DE CONTAS
+   ======================================================= */
+.secao-transparencia {
+    background-color: #ffffff; /* Fundo branquinho e limpo */
+}
+
+.contador-item {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+/* O Ícone de fundo (estilo marca d'água) */
+.icone-contador {
+    position: absolute;
+    top: -15px; /* Sobe um pouco o ícone */
+    left: -15px; /* Joga um pouco para a esquerda */
+    font-size: 3rem; /* Fica grandão */
+    color: #fc1092; /* Puxa a cor principal do seu site */
+    opacity: 0.17; /* Deixa bem transparente, quase uma sombra */
+    z-index: 0;
+}
+
+.numero-contador {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50; /* Azul marinho/chumbo elegante */
+    margin: 0;
+    position: relative;
+    z-index: 1; /* Fica por cima do ícone */
+}
+
+.legenda-contador {
+    font-family: var(--fonte-texto);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: #636e72;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+/* A linha vertical separadora (só aparece em telas de tablet e computador) */
+@media (min-width: 768px) {
+    .border-end-md {
+        border-right: 1px solid #eaeaea;
+    }
+}
+
+/* --- ESTILIZAÇÃO DO CÍRCULO CENTRAL DO MOSAICO --- */
+
+/* PASSO CRÍTICO: O contêiner pai precisa ser 'relative' 
+   para o filho (o círculo) se basear nele. */
+.mosaico-grid {
+    position: relative; 
+}
+
+/* Criar e posicionar o círculo central */
+.circulo-central {
+    width: 60px; /* Tamanho do círculo.  */
+    height: 60px;
+    background-color: rgba(167, 166, 166, 0.6); 
+    border-radius: 50%; /*  bolinha perfeita */
+    
+    /* Posicionamento Mágico no Centro */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* O segredo para alinhar o centro do círculo no centro da div pai */
+    
+    z-index: 5; /* Garante que ele fique acima das cores do grid, mas abaixo do hover (que é 10) */
+}
+
+/* =======================================================
+   RODAPÉ (FOOTER) PRINCIPAL DO SITE
+   ======================================================= */
+.rodape-agape {
+    /* O linear-gradient cria uma camada escura por cima da foto para o texto aparecer */
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+                url('assets/rodape.png');
+    
+    /* Faz a imagem cobrir o rodapé inteiro sem sobrar espaço */
+    background-size: cover;
+    
+    /* Deixa a imagem fixa ou centralizada */
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    padding-top: 60px;
+    color: #cccccc;
+    font-family: var(--fonte-texto);
+    background-attachment: fixed;
+}
+
+/* Títulos do Rodapé (Sobre Nós, Explore, etc) */
+.rodape-titulo {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Logo em texto */
+.rodape-logo {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Textinhos normais */
+.rodape-texto, .rodape-contato li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Redes Sociais (Bolinhas) */
+.rodape-social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #555555;
+    color: #cccccc;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.rodape-social a:hover {
+    background-color: #d91e18; /* Fica vermelho ao passar o mouse */
+    border-color: #d91e18;
+    color: #ffffff;
+}
+
+/* Links das Listas */
+.rodape-links li {
+    margin-bottom: 12px;
+}
+
+.rodape-links a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.rodape-links a:hover {
+    color: #ffffff; /* Fica branco ao passar o mouse */
+    text-decoration: underline;
+}
+
+/* A Linha Vermelha que divide o rodapé */
+.rodape-divisor {
+    border-top: 1px solid #d91e18; /* Vermelhão igual ao vídeo */
+    opacity: 1; /* Tira a transparência padrão do hr */
+    margin: 0;
+}
+
+/* Área de Newsletter */
+.rodape-newsletter input {
+    background-color: transparent;
+    border: 1px solid #555555;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 4px;
+}
+
+.rodape-newsletter input:focus {
+    background-color: rgba(255,255,255,0.05);
+    border-color: #36b9cc;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+/* O Botão Azul Ciano */
+.btn-newsletter {
+    background-color: #48c9b0; 
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-newsletter:hover {
+    background-color: #1abc9c;
+    color: #ffffff;
+}
+
+/* Copyright lá no finalzinho */
+.rodape-copyright {
+    font-size: 0.85rem;
+    color: #888888;
+}
+.rodape-copyright strong {
+    color: #cccccc;
+}
+
+/* Estilo das Abas de Cadastro */
+.nav-pills .nav-link {
+    color: #333;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 10px 25px;
+    margin: 0 5px;
+    background: #f8f9fa;
+    transition: 0.3s;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #d91e18 !important; /* Vermelho Ágape */
+    color: white !important;
+}
+
+.tab-content {
+    border-top: 4px solid #d91e18;
+}
+
+.titulo-sessao {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+/* Estilo do FAQ Sanfona */
+.accordion-button:not(.collapsed) {
+    background-color: #fff5f5; /* Um fundinho vermelho bem clarinho quando aberto */
+    color: #d91e18; /* Texto vermelho ao abrir */
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(217, 30, 24, 0.1);
+}
+
+.accordion-button {
+    padding: 20px;
+    font-size: 1.05rem;
+}
+
+.accordion-body {
+    padding: 20px 25px;
+    line-height: 1.6;
+    background-color: #fafafa;
+}
+
+.titulo-sessao-faq {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #333;
+}
+
+/* FIM DO RODAPÉ */
+
+/* =======================================================
+   INÍCIO: ESTILOS EXCLUSIVOS DO CADASTRO ESCOLAR (Sanduíche com Parallax)
+   ======================================================= */
+
+/* Container que segura o sanduíche e garante largura total */
+.banner-matricula-parallax {
+    width: 100vw !important; /* Força a largura total da janela */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+/* O SEGREDO DO MOVIMENTO (Efeito Parallax Simples) */
+.faixa-movimento {
+    width: 100% !important;
+    height: 130px !important; /* Altura achatada das faixas */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* ESSA LINHA FAZ A IMAGEM "MEXER" AO ROLAR O SITE */
+    background-attachment: fixed; 
+}
+
+/* Miolo Branco com Texto */
+.miolo-branco-matricula {
+    background-color: #ffffff;
+    padding: 50px 0 20px 0 !important; /* Espaço para o texto respirar (aumentei um pouco) */
+    width: 100% !important;
+}
+
+/* Estilo das Fontes (Usando os padrões que definimos antes) */
+.titulo-matricula-grandao {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 3.2rem; /* Título imponente */
+    font-weight: 700;
+    color: #2d3436;
+    margin-bottom: 11px !important;
+    line-height: 1.1;
+}
+
+.subtitulo-matricula {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    color: #636e72;
+    margin-bottom: 11px !important;
+}
+
+.unidade-matricula {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.85rem;
+    color: #6a6b6b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- ESTILOS DAS ABAS (PILLS) --- */
+.btn-aba {
+    background-color: #f8f9fa !important;
+    color: #2d3436 !important;
+    font-weight: 600 !important;
+    border-radius: 50px !important; /* Deixa bem redondinho igual à foto */
+    padding: 10px 30px !important;
+    margin: 0 10px !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+}
+
+.btn-aba.active {
+    background-color: #da2020 !important; /* Vermelho da foto */
+    color: #ffffff !important;
+}
+
+.secao-detalhes-matricula {
+    /* Tira o espaço extra que o Bootstrap coloca no topo da seção */
+    padding-top: 0 !important;
+}
+
+/* Removemos a borda que tínhamos colocado no tab-content antes */
+.tab-content {
+    border-top: none !important; 
+    padding-top: 70px !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    border-top: none !important;
+}
+
+
+/* --- LISTA DE DOCUMENTOS --- */
+.titulo-documentos {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    color: #2d3436;
+    font-size: 1.8rem;
+}
+
+.lista-documentos li {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee; /* Linha sutil entre itens */
+    padding-bottom: 10px;
+}
+
+.icone-doc {
+    background-color: #ff7423f3;
+    color: white;
+    width: 30px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin-right: 15px;
+    font-size: 0.8rem;
+}
+
+/* --- CAIXA AMARELA DE ATENÇÃO --- */
+.alerta-bh {
+    background-color: #fff9db; /* Amarelo clarinho */
+    border: 1px solid #ffe066;
+    padding: 20px;
+    border-radius: 8px;
+    color: #856404;
+}
+
+.alerta-bh p { margin-bottom: 0; font-size: 1.05rem; }
+
+/* BOTÃO DE CADASTRO PREFEITURA BH */
+.btn-cadastro-padrao {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    display: inline-block !important;
+    padding: 12px 25px !important; /* Mesma altura e largura para ambos */
+    border-radius: 8px !important;  /* Mesmo arredondamento */
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    text-align: center !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn-vermelho {
+    background-color: #da2020 !important;
+    color: #ffffff !important;
+}
+
+.btn-azul-tour {
+    background-color: #1fa8e7 !important;
+    color: #ffffff !important;
+}
+
+.btn-cadastro-padrao:hover {
+    transform: translateY(-3px) !important;
+    filter: brightness(90%) !important;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15) !important;
+    color: #ffffff !important;
+}
+
+.btn-cadastro-padrao i {
+    font-size: 0.9rem !important;
+    margin-left: 8px !important;
+}
+
+/* ESTILOS DA ABA DIA A DIA */
+
+.bg-vermelho-agape {
+    background-color: #da2020 !important;
+}
+
+/* Deixa a tabela com as bordas arredondadas e limpas */
+.table {
+    border: 1px solid #eee;
+}
+
+.table thead th {
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.table tbody td {
+    padding: 15px;
+    font-size: 1rem;
+    color: #444;
+}
+
+#conteudo-matricula .col-lg-7 {
+    padding-left: 60px !important; /* Cria o recuo na esquerda para não grudar na tela */
+    padding-right: 30px !important; /* Garante que não encoste na foto também */
+}
+
+.moldura-foto-estudo img {
+    max-width: 70% !important; /* Diminui o tamanho da imagem (ajuste a % se quiser menor ainda) */
+    height: auto;
+    margin: 0 auto; /* Centraliza a foto dentro do espaço dela */
+    display: block;
+}
+
+/* Ajuste para telas menores (celular) para não ficar com muito espaço */
+@media (max-width: 991px) {
+    #conteudo-matricula .col-lg-7 {
+        padding-left: 15px !important; /* No celular volta ao normal para aproveitar a tela */
+    }
+    .moldura-foto-estudo img {
+        max-width: 100% !important; /* No celular ela pode ocupar mais espaço */
+        margin-top: 30px;
+    }
+}
+
+
+/* --- ESTILOS DA LINHA DO TEMPO (ROTINA) --- */
+
+.timeline-agape {
+    position: relative;
+    padding-left: 20px;
+}
+
+/* A linha vertical cinza ao fundo */
+.timeline-agape::before {
+    content: '';
+    position: absolute;
+    left: 45px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #e0e0e0;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.time-circle {
+    min-width: 90px;
+    height: 40px;
+    background: #165152fb;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-right: 30px;
+    box-shadow: 0 4px 10px rgba(62, 70, 212, 0.3);
+}
+
+.timeline-content h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #2d3436;
+    margin-bottom: 5px;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    color: #636e72;
+    margin-bottom: 0;
+}
+
+/* --- CARD DE NUTRIÇÃO PREMIUM --- */
+
+.card-nutricao-premium {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    border-top: 6px solid #ad9898;
+}
+
+.card-topo-nutri {
+    background: #fff9f0; /* Um creme bem clarinho */
+    padding: 20px;
+    text-align: center;
+}
+
+.icone-nutri-viva {
+    font-size: 2.5rem;
+    color: #da2020;
+    margin-bottom: 15px;
+}
+
+.card-topo-nutri h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #2d3436;
+}
+
+.card-corpo-nutri {
+    padding: 25px;
+}
+
+.checklist-nutri li {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.checklist-nutri i {
+    color: #2ecc71; /* Verde saúde */
+    margin-right: 10px;
+}
+
+/* Ajuste de respiro para o celular */
+@media (max-width: 991px) {
+    .row { padding-left: 15px !important; }
+}
+
+/* --- ESTILOS DO BLOCO DE EQUIPE --- */
+
+.membro-equipe-box {
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.membro-equipe-box:hover {
+    transform: translateY(-10px); /* Dá um leve pulinho ao passar o mouse */
+}
+
+.foto-perfil-redonda {
+    width: 170px;
+    height: 170px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px dashed #da2020; /* Moldura pontilhada vermelha para combinar */
+    padding: 5px;
+    background-color: #ffffff;
+}
+
+.foto-perfil-redonda img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Não deixa a foto esticar */
+    border-radius: 50%;
+}
+
+.nome-membro {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #2d3436;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.cargo-membro {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.85rem;
+    color: #615d5d; /* Destaca a função em vermelho */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Ajuste para não ficar grudado no celular */
+@media (max-width: 991px) {
+    .row { padding-left: 15px !important; }
+    .foto-perfil-redonda { width: 140px; height: 140px; }
+}
+
+.faixa-criativa-atividades {
+    max-width: 850px !important; /* 1. Deixa a faixa mais estreita (antes era o container todo) */
+    margin-left: auto !important; 
+    margin-right: auto !important; /* 2. Centraliza ela no meio da página */
+    background-color: #e6fdfc;
+    border: 2px dashed #16fffb;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.icone-faixa {
+    font-size: 3rem;
+    color: #da2020;
+}
+
+.titulo-faixa {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700;
+    color: #2d3436;
+}
+
+.btn-imprimir-desenhos {
+    background-color: #2d3436;
+    color: #ffffff !important;
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-imprimir-desenhos:hover {
+    background-color: #da2020;
+    transform: translateY(-3px);
+}
+
+/* ==========================================
+   ESTILOS DO FAQ (ACCORDION ÁGAPE)
+   ========================================== */
+
+/* Arredonda os cantos e tira a borda feia do Bootstrap */
+.accordion-agape .accordion-item {
+    border-radius: 12px !important;
+    overflow: hidden;
+    background-color: #fbfbfb;
+}
+
+/* O botão da pergunta */
+.accordion-agape .accordion-button {
+    background-color: transparent;
+    box-shadow: none !important;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* Quando o botão estiver aberto (ativo) */
+.accordion-agape .accordion-button:not(.collapsed) {
+    background-color: #e3f2fd; /* Um azul bem clarinho e elegante */
+    color: #003366 !important; /* Texto fica azul escuro */
+}
+
+/* Onde fica a resposta */
+.accordion-agape .accordion-body {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-top: 1px solid #eee;
+    line-height: 1.7;
+}
+/* =======================================================
+   FIM: ESTILOS EXCLUSIVOS DO CADASTRO ESCOLAR
+   ======================================================= */
+
+   /* Aqui temos os estilos do link da transparência */
+   /* Classe para o container da fonte */
+.link-fonte-pequeno {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif; /* Letra de forma limpa */
+    font-size: 0.7rem; /* Tamanho bem reduzido */
+    letter-spacing: 0.05rem; /* Espaçamento entre letras para dar elegância */
+    text-transform: uppercase; /* Opcional: deixa as letras em caixa alta (estilo etiqueta) */
+    opacity: 0.7; /* Deixa um pouco mais discreto */
+    transition: all 0.3s ease;
+}
+
+/* Estilo específico para o link dentro dessa classe */
+.link-fonte-pequeno a {
+    color: #6c757d !important; /* Cor cinza suave */
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Efeito ao passar o mouse */
+.link-fonte-pequeno a:hover {
+    color: #000 !important; /* Escurece um pouco ao interagir */
+    opacity: 1;
+}

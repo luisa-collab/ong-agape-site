@@ -1,0 +1,254 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+.banner-video-cursos{
+ width: 100vw !important; /* Garante que ocupe toda a largura da tela, ignorando qualquer container pai */
+ height: 180px !important; /* Altura fixa para o banner, como na imagem */
+ 
+ position: relative;
+ left: 50%; /* Move o banner para a direita em 50% da largura da tela */
+ right: 50%;
+ margin-left: -50vw !important; /* Move o banner para a esquerda em 50% da largura da tela, centralizando-o */
+ margin-right: -50vw !important; /* Centraliza o banner mesmo que a tela seja redimensionada */
+ overflow: hidden !important; /* Nada que estiver dentro pode sair daqui */
+ background-color: #000;
+}
+
+.video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100% !important;
+    z-index: 1;
+    overflow: hidden !important;
+}
+
+.video-elemento {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Faz o vídeo se adaptar ao espaço de 180px */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* --- ESTILO DO TÍTULO CENTRALIZADO --- */
+
+.secao-titulo-cursos {
+    text-align: center !important; /* Garante que tudo dentro do container centralize */
+    padding-top: 11px !important;
+}
+
+.color-titulo-agape {
+    color: #000000 !important; /* Preto absoluto como você pediu */
+    font-weight: 800 !important;
+}
+
+.color-subtitulo-agape {
+    color: #4d4d4d !important; /* Um cinza mais fechado/escuro que o anterior */
+    font-weight: 500;
+}
+
+/* A unidade-matricula a gente mantém o cinza claro padrão */
+.color-unidade-agape {
+    color: #797e81 !important; 
+    letter-spacing: 2px;
+}
+
+/* --- DESTAQUE COLORIDO NO TÍTULO --- */
+
+.destaque-azul {
+    color: #f60d0d !important; /* Azul vibrante da Ágape */
+    font-weight: 800; /* Garante que fique bem gordinho e visível */
+}
+
+/* --- AJUSTE EXCLUSIVO DA FAIXA DE BAIXO --- */
+
+.banner-video-baixo {
+    /* O valor negativo faz ela 'subir' em direção ao título */
+    margin-top: -35px !important; 
+    
+    /* Garante que ela fique por cima de qualquer sombra ou borda */
+    position: relative;
+    z-index: 5; 
+}
+
+/* --- ESTILO DOS CARDS CURSOS (FINO E ELEGANTE) --- */
+
+.carrossel-cursos-agape {
+    display: block;
+    width: 100%;
+}
+
+.card-curso-mini {
+    max-width: 200px !important;
+    background: #ffffff !important; /* Branco para o texto preto aparecer */
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    margin: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.thumb-mini {
+    height: 100px !important;  /* Trava a altura da imagem */
+    overflow: hidden;
+}
+
+.thumb-mini img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Não deixa a foto esticar */
+}
+
+.corpo-mini {
+    padding: 20px;
+    text-align: center;
+}
+
+.corpo-mini h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #494747;
+    margin-bottom: 10px;
+}
+
+.btn-detalhes-mini {
+    background-color: #fe5010;
+    color: #ffffff !important;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-detalhes-mini:hover {
+    background-color: #da2020;
+}
+
+/* --- ESTILO INTERNO DO MODAL --- */
+.lista-detalhes-modal li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 8px;
+}
+
+.lista-detalhes-modal i {
+    color: #b4b1b1; /* Vermelho padrão da Ágape */
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+}
+
+.modal-header.bg-dark {
+    background-color: #a7ddee !important;
+}
+
+/* =======================================================
+   O FUNDO: 6 IMAGENS OPACAS E ESPALHADAS (CHAVE DE OURO)
+   ======================================================= */
+
+.fundo-padrao-espalhado {
+    background-image: 
+        /* 1. Nota Musical (Esquerda Cima) */
+        linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('assets/img-cursos/Detalhecursos2.png'),
+        /* 2. Livro (Esquerda Baixo) */
+        linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('assets/img-cursos/DetalheCursos.png'),
+        /* 3. Mapa (Direita Cima) */
+        linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('assets/img-cursos/Detalhecursos3.png'),
+        /* 4. Conhecimento (Direita Baixo) */
+        linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('assets/img-cursos/Detalhecursos4.png'),
+        /* 5. Coração (Baixo Esquerda) */
+        linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('assets/coracao_fundo.png'),
+        /* 6. Mão (Baixo Direita) */
+        linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('assets/img-cursos/mão.png');
+
+    /* PRECISA REPETIR 12 VEZES O NO-REPEAT */
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    
+    /* COORDENADAS: Cada par (Ex: 2% 10%, 2% 10%) garante que o gradiente fique EM CIMA da imagem certa */
+    background-position: 
+        2% 10%, 2% 10%,     /* Par 1: Esquerda Superior */
+        25% 5%, 25% 20%,     /* Par 2: Esquerda Inferior */
+        98% 15%, 98% 15%,   /* Par 3: Direita Superior */
+        95% 75%, 95% 75%,   /* Par 4: Direita Inferior */
+        24% 18%, 23% 18%,   /* Par 5: Fundo Esquerda */
+        70% 98%, 70% 98%;   /* Par 6: Fundo Direita */
+    
+    /* TAMANHOS: Também repetidos para cada par */
+    background-size: 
+        90px auto, 90px auto,
+        150px auto, 150px auto,
+        150px auto, 150px auto,
+        130px auto, 130px auto,
+        120px auto, 120px auto,
+        140px auto, 140px auto;
+}
+
+/* =======================================================
+   ESTILO DO BANNER DE VOLUNTARIADO (IGUAL À IMAGEM)
+   ======================================================= */
+
+.banner-voluntario-impacto {
+    /* ONDE MEXER: Use uma imagem de galhos ou floresta escura no fundo */
+    background: linear-gradient(rgba(239, 237, 237, 0.321), rgba(0, 0, 0, 0.5)), 
+                url('assets/img-cursos/arvorebranca.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efeito parallax que você gosta */
+    padding: 80px 0 !important; 
+    margin-bottom: 160px !important;
+    
+}
+
+/* A fonte 'Playfair Display' dá o estilo da imagem */
+.titulo-impacto-serif {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700;
+    font-size: 2.8rem !important;
+    color: #fcfafa !important;
+    line-height: 1.2;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* O BOTÃO LARANJA IGUAL AO DA CAPTURA */
+.btn-laranja-agape {
+    background-color: #55504c !important; /* Laranja vibrante */
+    color: #ffffff !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 15px 30px !important;
+    border-radius: 8px !important;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+    width: 180px; /* Tamanho fixo para os dois ficarem iguais */
+    text-align: center;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.btn-laranja-agape:hover {
+    background-color: #050505 !important;
+    transform: scale(1.05);
+    color: #fff !important;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .titulo-impacto-serif {
+        font-size: 2rem !important;
+    }
+}

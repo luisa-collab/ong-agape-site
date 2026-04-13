@@ -1,0 +1,704 @@
+
+/* =========================================
+   1. VARIÁVEIS GLOBAIS E PALETA DE CORES
+   ========================================= */
+
+   html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --cor-primaria: #da2020; /* Uma cor quente e chamativa para os botões de doação */
+    --cor-secundaria: #2d3436; /* Um tom escuro e elegante para os textos principais */
+    --cor-fundo-claro: #f9f9f9; /* Fundo para seções de respiro */
+    --cor-texto-p: #636e72; /* Cor mais suave para parágrafos longos, não cansa a vista */
+    --cor-texto-escuro: #1a1a1a;
+    --fonte-titulos: 'Poppins', sans-serif;
+    --fonte-textos: 'Open Sans', sans-serif;
+}
+
+/* =========================================
+   2. RESET E CONFIGURAÇÕES GERAIS
+   ========================================= */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte-textos);
+    color: var(--cor-texto-p);
+    background-color: #ffffff;
+    /* Isso garante que a rolagem da página seja suave ao clicar em um link */
+    scroll-behavior: smooth; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fonte-titulos);
+    color: var(--cor-secundaria);
+    font-weight: 700;
+}
+
+/* Retirando sublinhados de links por padrão */
+a {
+    text-decoration: none;
+    transition: all 0.3s ease-in-out; /* Toda mudança de cor em link será suave */
+}
+
+/* =========================================
+    TOPBAR (Barra Superior) 
+   ========================================= */
+.topbar {
+    background-color: #fafafa; /* Cinza bem clarinho, super elegante */
+    font-size: 0.69rem;
+    letter-spacing: 0.5px;
+}
+
+/* O Segredo para arredar pro centro: limitamos a largura máxima do container */
+.container-topbar {
+    max-width: 950px; 
+}
+
+/* Forçando a cor preta/bem escura nas informações */
+.texto-escuro {
+    color: #302d2d !important; 
+}
+
+/* Mantemos o ícone colorido com a cor primária para não ficar tudo "morto" */
+.icone-destaque {
+    color: #292828 !important;
+    
+
+}
+
+.topbar-link {
+    transition: color 0.3s ease-in-out;
+}
+
+/* O hover (passar o mouse) muda para a cor primária para dar vida e interatividade */
+.topbar-link:hover, .topbar-icon:hover i {
+    color: var(--cor-primaria) !important;
+}
+
+.topbar-icon i {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.topbar-icon:hover i { 
+    transform: translateY(-3px); 
+}
+
+/* =======================================================
+   BLOCO 2: NAVBAR E MENU PRINCIPAL
+   ======================================================= */
+
+/* Estilo dos Links do Menu (Fonte Oswald, letra pequena, maiúscula) */
+.menu-link {
+    font-family: var(--fonte-titulos);
+    font-size: 0.68rem !important; 
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--cor-secundaria) !important;
+    padding: 8px 10px !important;
+    position: relative; /* Segredo para a linha funcionar */
+    transition: all 0.3s ease;
+}
+
+/* =======================================================
+   A MORTE DO FUNDO CINZA E A NOVA BARRINHA SINGELA
+   ======================================================= */
+
+/* 1. Menu Principal: Zero fundo e criando a barrinha cinza claro */
+.menu-link:hover, .menu-link:focus {
+    background-color: transparent !important; /* Mata o fundo cinza nativo */
+    color: var(--cor-texto-escuro) !important; /* Mantém a letra preta */
+    opacity: 1 !important; /* Tira aquele efeito de ficar transparente */
+}
+
+/* Criando a barrinha cinza claro invisível embaixo das palavras do menu */
+.menu-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px; /* Altura da barrinha */
+    left: 10px; /* Alinhado certinho com o texto */
+    width: 0; /* Começa invisível */
+    height: 2px; /* Espessura fina e elegante */
+    background-color: #ec1616; /* Cinza bem claro */
+    transition: width 0.3s ease; /* Animação suave */
+}
+
+/* Quando passa o mouse, a barrinha cinza claro aparece */
+.menu-link:hover::after {
+    width: 20px; /* Tamanho bem singelo, só um detalhe */
+}
+
+
+/* 2. Janelinhas (Causas e Páginas): Zero fundo e barrinha cinza claro */
+
+@media (min-width: 992px) {
+    /* Faz o menu aparecer e tira a margem que atrapalha */
+    .navbar .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0; 
+    }
+    
+    /* A PONTE INVISÍVEL: Impede o menu de fechar quando o mouse desce */
+    .navbar .dropdown .dropdown-menu::before {
+        content: '';
+        position: absolute;
+        top: -20px; /* Sobe 20px para colar na palavra de cima */
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: transparent; 
+    }
+}
+.dropdown-agape {
+    border-top: 2px solid var(--cor-primaria) !important;
+}
+
+.dropdown-agape .dropdown-item {
+    font-family: var(--fonte-titulos);
+    font-size: 0.80rem;
+    text-transform: uppercase;
+    color: var(--cor-secundaria) !important;
+    padding: 8px 20px;
+}
+
+.dropdown-agape .dropdown-item:hover,
+.dropdown-agape .dropdown-item:focus,
+.dropdown-agape .dropdown-item.active {
+    background-color: transparent !important; /* Mata o fundo cinza maldito */
+    color: var(--cor-texto-escuro) !important; /* Mantém a letra preta */
+    position: relative; /* Necessário para a barrinha funcionar aqui dentro */
+}
+
+/* Criando a barrinha cinza claro invisível nas opções da janelinha */
+.dropdown-agape .dropdown-item::after {
+    content: '';
+    position: absolute;
+    bottom: 5px; 
+    left: 20px;
+    width: 0;
+    height: 2px;
+    background-color: #ec1616; /* O mesmo cinza claro */
+    transition: width 0.3s ease;
+}
+
+/* Quando passa o mouse na opção, a barrinha aparece */
+.dropdown-agape .dropdown-item:hover::after {
+    width: 15px; /* Ainda menor, bem minimalista */
+}
+/* --- BOTÃO DOE AGORA --- */
+.btn-doe {
+    background-color: #ff8e32;
+    color: #ffffff;
+    font-family: var(--fonte-titulos);
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+.btn-doe:hover {
+    background-color: #f80000; /* Fica preto ao passar o mouse */
+    color: #ffffff;
+}
+
+/* --- ÁREA PRINCIPAL DO BLOG --- */
+.area-principal-blog {
+    position: relative;
+    max-width: 1200px; /* Mantém o conteúdo centralizado e contido */
+    margin: 0 auto;
+    padding-top: 40px; /* Dá um espaço para o conteúdo não colar na etiqueta */
+    min-height: 800px; /* Garante que a página tenha altura para a foto */
+    /* Esta é a linha reta do seu desenho (logo abaixo do menu) */
+    border-top: 2px solid #e0e0e0; 
+}
+
+/* --- A ETIQUETA / CARTÃOZINHO --- */
+.etiqueta-bem-vindo {
+    position: absolute;
+    top: 0; /* Cola a etiqueta lá em cima, na linha */
+    left: 40px; /* Arreda um pouco para a direita, como no seu desenho */
+    
+    /* Visual do cartão */
+    background-color: #ffffff;
+    color: #003366; /* Azul elegante (mude para a cor que preferir) */
+    padding: 8px 20px;
+    border: 1px solid #e0e0e0; /* Bordinha sutil */
+    border-top: none; /* Tira a borda de cima para parecer que sai da linha */
+    border-radius: 0 0 12px 12px; /* Arredonda só a parte de baixo! */
+    
+    /* Fonte e texto */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    /* Sombra para dar profundidade (parecer que está solto) */
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.05);
+}
+
+/* --- A CAIXA DA IMAGEM NA DIREITA --- */
+.caixa-imagem-direita {
+    position: absolute; /* Deixa ela solta para você colocar onde quiser */
+    top: 0px; /* Distância da linha do topo */
+    right: 20px; /* Encostada no lado direito do site */
+    
+    /* AQUI ESTÁ O SEGREDO DO FORMATO VERTICAL */
+    width: 380px;  /* Largura menor */
+    height: 450px; /* Altura bem maior (formato retrato) */
+    z-index: 10;
+}
+
+/* --- ESTILO DA IMAGEM --- */
+.img-vertical-blog {
+    width: 100%;
+    height: 100%;
+    
+    /* object-fit: cover corta a sua imagem horizontal pra caber no retângulo vertical sem distorcer a foto */
+    object-fit: cover; 
+    
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent !important;
+    mix-blend-mode: multiply;
+}
+
+/* --- RESPONSIVIDADE (Para Celular) --- */
+@media (max-width: 991px) {
+    .flex-blog-hero {
+        flex-direction: column; /* No celular, a imagem vai para baixo do texto */
+        text-align: center;
+        padding-top: 80px;
+    }
+    .col-imagem-blog {
+        width: 100%;
+        height: 350px; /* Diminui a altura no celular */
+    }
+}
+
+/* --- SEÇÃO DO TÍTULO --- */
+.hero-manifesto {
+    width: 100%;
+    padding-top: 50px; /* Desce o bloco para não grudar no menu */
+    padding-bottom: 60px;
+    display: flex;
+    justify-content: flex-start; /* Garante que tudo comece na esquerda */
+}
+
+.container-texto {
+    padding-left: 80px; /* A distância da "beirada" esquerda da página */
+    max-width: 800px;
+}
+
+/* O TÍTULO: Elegante, Grande e Forte */
+.titulo-grande {
+    font-family: 'Playfair Display', serif;
+    font-size: 5.5rem; /* Tamanho bem grande */
+    font-weight: 800;
+    color: #003366; /* Azul profundo para autoridade */
+    line-height: 0.9; /* Deixa as palavras bem próximas e modernas */
+    margin: 0;
+    letter-spacing: -2px;
+}
+
+/* A ASSINATURA: O toque final de charme */
+.assinatura-milton {
+    font-family: 'Great Vibes', cursive; /* A fonte de caneta que você gostou */
+    font-size: 2.5rem;
+    color: #555;
+    margin-top: 15px;
+    padding-left: 5px; /* Alinhamento fino com o título */
+}
+
+/* Ajuste para não quebrar no celular */
+@media (max-width: 768px) {
+    .container-texto { padding-left: 30px; }
+    .titulo-grande { font-size: 3.5rem; }
+    .assinatura-milton { font-size: 1.8rem; }
+}
+
+/* --- CONTAINER DO MANIFESTO --- */
+.manifesto-container {
+    padding: 30px 60px 80px 60px; /* Grande respiro nas laterais e no topo */
+    display: flex;
+    justify-content: flex-start;
+    margin-top: -11px;
+    position: relative;
+    z-index: 99; /* Para ficar atrás da imagem, mas na frente do fundo */
+}
+
+.bloco-texto-impacto {
+    max-width: 850px; /* Limita a largura para a leitura ser confortável */
+}
+
+.titulo-sessao {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #919090;
+    margin-bottom: 5px;
+}
+
+.subtitulo-manifesto {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #293848;
+    margin-bottom: 40px;
+    font-weight: 800;
+}
+
+/* O TEXTO DO MANIFESTO */
+.texto-manifesto {
+    margin: 0;
+    padding-left: 30px;
+    border-left: 4px solid #003366; /* Linha de destaque lateral */
+}
+
+.texto-manifesto p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+/* Destaque nas potencialidades */
+.texto-manifesto strong {
+    color: #003366;
+    font-weight: 700;
+}
+
+.assinatura-final {
+    font-family:  'Inter', sans-serif;
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 40px;
+}
+
+/* --- BLOCO APENAS PARA A IMAGEM HORIZONTAL --- */
+.bloco-imagem-gigante {
+    max-width: 630px;
+    width: 100%;
+    height: 400px; /* Você pode aumentar ou diminuir essa altura */
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.img-horizontal-pura {
+    width: 100%;
+    height: 100%;
+    
+    /* O SEGREDO: Corta a imagem para caber na caixa sem amassar as letras! */
+    object-fit: cover; 
+    
+    
+}
+
+/* Ajuste para celular */
+@media (max-width: 768px) {
+    .bloco-imagem-gigante {
+        height: 200px; /* Diminui a altura no celular para não sumir com as bordas */
+    }
+}
+
+/* --- SETA DE TRANSIÇÃO --- */
+.bloco-seta-guia {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    /* Aqui você controla o espaço: -20px puxa ela pra perto do texto, 30px empurra a foto pra baixo */
+    margin: -180px 0 -50px 0; 
+    
+    position: relative;
+    z-index: 10;
+}
+
+.seta-animada {
+    width: 195px; /* Tamanho delicado. Se achar pequena, mude para 60px ou 80px */
+    height: auto;
+    opacity: 0.7; /* Deixa ela um pouquinho transparente para ficar elegante */
+    
+}
+
+/* O "motor" da animação da seta */
+@keyframes flutuar-seta {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(12px); } /* Desce 12 pixels e volta */
+}
+
+/* --- SEÇÃO DE ARTIGOS COMPLETOS --- */
+.artigos-agape-expansao {
+    padding: 10px 10px 20px 10px;
+    max-width: 1000px;
+    margin: -30px auto 0 auto;
+}
+
+/* O BLOCO QUE SEGURA A IMAGEM E O TEXTO LADO A LADO */
+.bloco-artigo-completo {
+    display: flex;
+    align-items: center; /* Centraliza a imagem e o texto verticalmente */
+    gap: 50px; /* O respiro grande entre a foto e o texto */
+    margin-bottom: 100px; /* Distância entre um artigo e outro */
+    /* 2. A MÁGICA DO RESPIRO NOS CANTOS (ESQUERDA E DIREITA) */
+    max-width: 1200px; /* Impede que o bloco estique infinitamente */
+    margin: 0 auto 80px auto; /* O 'auto' centraliza o bloco, criando os espaços vazios nas laterais! */
+    padding: 0 40px; /* Escudo extra de segurança para não grudar em telas médias */
+}
+
+/* A CLASSE QUE INVERTE OS LADOS (Layout em Z) */
+.bloco-artigo-completo.inverso {
+    flex-direction: row-reverse;
+}
+
+/* A ÁREA DA IMAGEM */
+.artigo-imagem {
+    flex: 0 0 320px; /* Ocupa metade do espaço */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.artigo-imagem img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.artigo-imagem:hover img {
+    transform: scale(1.03); /* Um zoom levíssimo só de charme */
+}
+
+/* A ÁREA DO TEXTO COMPLETO */
+.artigo-conteudo {
+    flex: 1; /* Ocupa a outra metade do espaço */
+}
+
+.artigo-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #293848;
+    font-weight: 800;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.artigo-texto {
+    font-family: 'Inter', sans-serif;
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify; /* Deixa o bloco de texto bem quadradinho e conclusivo */
+}
+
+/* RESPONSIVIDADE PARA CELULARES E TABLETS */
+@media (max-width: 992px) {
+    .bloco-artigo-completo,
+    .bloco-artigo-completo.inverso {
+        flex-direction: column; /* Coloca um embaixo do outro no celular */
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+    
+    .artigo-titulo {
+        font-size: 2rem;
+    }
+}
+/* --- SEÇÃO ARTIGO LIMPO (TÍTULO SOLTO E IMAGEM NO MEIO) --- */
+.secao-artigo-limpa {
+    padding: 40px 20px;
+    max-width: 1100px; /* Mantém o texto em uma largura boa para leitura */
+    margin: -10px auto 0 auto;
+    position: relative;
+}
+
+.cabecalho-artigo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-artigo-limpo {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #293848; /* Azul Ágape */
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.corpo-texto-artigo {
+    text-align: center; 
+}
+
+.corpo-texto-artigo p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+/* --- A CAIXA INVISÍVEL ONDE O 3D VOA --- */
+.caixa-voo-3d {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* ESSENCIAL: Impede que o 3D bloqueie o clique nos seus botões de baixo */
+    z-index: 50; /* Garante que o dirigível voe por cima do texto */
+    overflow: hidden; /* Não deixa criar barra de rolagem se ele sair da tela */
+}
+
+/* --- O MOTOR DE ROTA DEFINITIVO --- */
+.dirigivel-rota-animada {
+    position: absolute;
+    width: 300px; 
+    height: 300px;
+    background-color: transparent;
+    outline: none;
+    
+    /* A ROTA LONGA E BAIXA:
+       M 950 450 -> Começa no Y=450 (Bem mais baixo, no meio do texto).
+       O caminho agora vai até Y=1400 (Varre a página toda para baixo).
+    */
+    offset-path: path('M 800 1200 Q 80 100, 100 150 T 50 100 ');
+    
+    /* CONSERTO DA RÉ E DA QUEDA:
+       O 'auto' é OBRIGATÓRIO para ele seguir a linha.
+       O '180deg' vira ele para frente. 
+       Se ele ainda parecer torto, tente mudar o 180deg para 90deg ou 0deg.
+    */
+    offset-rotate: auto 180deg; 
+
+    /* Aumentei para 25s para o voo ser majestoso e lento, já que o caminho é longo */
+    animation: vooDirigivelLoop 25s infinite linear;
+}
+
+@keyframes vooDirigivelLoop {
+    0% { offset-distance: 0%; opacity: 0; }
+    5% { opacity: 1; }
+    90% { offset-distance: 80%; opacity: 1; } /* Ele voa por toda a página, e só depois começa a desaparecer */
+    95%, 100% { offset-distance: 90%; opacity: 0; } /* Ele desaparece suavemente no final do voo */
+}
+
+/* Destaques em Azul no texto */
+.corpo-texto-artigo strong {
+    color: #003366;
+    font-weight: 700;
+}
+
+/* =========================================
+   GALERIA 3D (ESPETÁCULO VISUAL)
+   ========================================= */
+
+.galeria-3d-container {
+    position: relative;
+    width: 100%;
+    max-width: 1400px; /* Mantém a galeria centralizada e contida */
+    height: 800px; /* Altura da seção toda */
+    margin: -90px auto 100px auto; /* Espaço acima e abaixo da galeria */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Não deixa a tela criar barra de rolagem pros lados */
+    
+    
+}
+
+/* --- O MOTOR DO CARROSSEL --- */
+.carrossel-3d {
+    position: relative;
+    width: 250px; /* Largura da imagem central */
+    height: 350px; /* Altura da imagem central */
+    
+    /* ESSENCIAL: Mantém os filhos (as fotos) no espaço 3D */
+    transform-style: preserve-3d; 
+    
+    /* A animação gira o eixo Y continuamente em 20 segundos */
+    animation: girar-espetaculo 48s infinite linear;
+}
+
+/* Bônus: Quando o mouse passa por cima, o carrossel para de girar para a pessoa olhar a foto */
+.carrossel-3d:hover {
+    animation-play-state: paused;
+}
+
+/* --- AS FOTOS (OS CARDS) --- */
+.foto-3d {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    
+    /* A MATEMÁTICA MÁGICA: 
+       360 graus divididos por 10 fotos = 36deg.
+       Cada foto multiplica 36deg pela sua variável '--i'.
+       O translateZ(400px) empurra elas para longe, formando a roda. */
+    transform: rotateY(calc(var(--i) * 36deg)) translateZ(400px);
+    
+    /* Visual da foto */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    
+    /* Aquele reflexo espelhado no chão que você gostou */
+    -webkit-box-reflect: below 5px linear-gradient(transparent, transparent, rgba(0,0,0,0.2));
+}
+
+.foto-3d img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* --- A ANIMAÇÃO DE ROTAÇÃO INFINITA --- */
+@keyframes girar-espetaculo {
+    0% {
+        transform: perspective(1200px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1200px) rotateY(360deg);
+    }
+}
+
+/* --- RESPONSIVIDADE PARA CELULAR --- */
+@media (max-width: 768px) {
+    .carrossel-3d {
+        width: 160px; /* Fotos menores no celular */
+        height: 220px;
+    }
+    .foto-3d {
+        /* O translateZ tem que ser menor no celular, senão as fotos vazam da tela */
+        transform: rotateY(calc(var(--i) * 36deg)) translateZ(250px);
+    }
+}
+
+.cabecalho-galeria {
+    text-align: center;
+    margin-bottom: 30px; /* Espaço para o carrossel */
+}
+
+.titulo-galeria-fotos {
+    font-family: 'Playfair Display', serif; /* Use Ballet aqui se preferir a fonte de caneta */
+    font-size: 3rem;
+    color: #25313f; /* Azul Ágape */
+    font-weight: 800;
+    margin: 15px ; /* Tira a margem padrão para controlar melhor o espaçamento */
+}
+
+.subtitulo-galeria {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: #292828;
+    margin-top: 10px;
+}

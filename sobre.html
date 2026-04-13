@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Ong Ágape</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sobre.css">
+</head>
+
+<body>
+    <div class="topbar py-2">
+        <div class="container container-topbar">
+            <div class="row align-items-center">
+                <div class="col-md-7 text-center text-md-start d-flex gap-4">
+                    <a href="mailto:contato@ongagape.org.br" class="topbar-link texto-escuro"><i class="fa-solid fa-envelope me-2"></i>contato@ongagape.org.br</a>
+                    <a href="tel:+5531991611202" class="topbar-link texto-escuro d-none d-sm-inline"><i class="fa-solid fa-phone me-2"></i>(31) 99161-1202</a>
+                </div>
+                <div class="col-md-5 text-center text-md-end d-flex justify-content-md-end gap-3">
+            
+                    <div class="social-icons d-flex gap-3 border-start ps-3">
+                        <a href="https://www.facebook.com/ong.agape.provisao.2025?locale=pt_BR" target="_blank" class="topbar-icon texto-escuro"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/ongagapebh/" target="_blank" class="topbar-icon texto-escuro"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-white py-3 shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/logoOriginal.png" alt="Logo ONG Ágape" height="58">
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto gap-3 align-items-center me-4">
+                    <li class="nav-item"><a class="nav-link menu-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="sobre.html">Sobre</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link menu-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Causas</a>
+                        <ul class="dropdown-menu border-0 shadow-sm">
+                            
+                            <li><a class="dropdown-item" href="#">Creche</a></li>
+                            <li><a class="dropdown-item" href="doacao.html">Doações</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link menu-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Páginas</a>
+                        <ul class="dropdown-menu border-0 shadow-sm">
+                            <li><a class="dropdown-item" href="cadastro-escolar.html">Cadastro Escolar</a></li>
+                            <li><a class="dropdown-item" href="cursos.html">Cursos</a></li>
+                            <li><a class="dropdown-item" href="voluntarios.html">Voluntários</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link menu-link" href="blog_agape.html">Blog</a></li>
+                </ul>
+
+                <div class="d-flex flex-column align-items-start">
+                    <button onclick="copiarPix('mensagem-pix')" class="btn btn-doe px-4 py-2 fw-bold">
+                        DOE AGORA
+                    </button>
+                    
+                    <div id="mensagem-pix" style="display: none; color: #aa0505; font-size: 0.9rem; margin-top: 8px; font-weight: bold;">
+                        CNPJ Copiado! Vá em 'Pagar com PIX' no seu banco.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <section class="banner-sobre-imersivo">
+    
+    <div class="banner-zoom-fundo">
+        <img src="assets/img-sobre/BannerSobre.png" alt="Banner Sobre Nós" class="img-zoom-elemento">
+    </div>
+    
+    <div class="banner-cortina"></div>
+
+    <div class="container conteudo-banner-sobre">
+        <h1 class="titulo-banner-principal">Sobre Nós</h1>
+        
+    </div>
+</section>
+
+<section class="secao-sobre-detalhada py-5">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            
+            <div class="col-lg-7 mb-4 mb-lg-0">
+                <div class="cabecalho-pequeno d-flex align-items-center mb-3">
+                    <img src="assets/img-sobre/DetalheMaoFloarecer.png" alt="Logo Ágape" class="mini-logo-secao">
+                    <span class="badge-topo-texto ms-2">TRANSFORMANDO REALIDADES DESDE 2016</span>
+                </div>
+                
+                <h2 class="titulo-sobre-destaque mb-3">
+                    Acolhimento & Apoio Verdadeiro Para a Comunidade
+                </h2>
+                
+                <p class="lead-sobre mb-4">
+                    Muito além de assistência, nós entregamos dignidade e reescrevemos histórias.
+                </p>
+                
+                <div class="texto-missao-alinhado">
+                    <p>
+                        Há quase uma década, a ONG Ágape Provisão atua como um verdadeiro farol de esperança para famílias em situação de vulnerabilidade. Nossa missão é provar que a transformação acontece na prática: acolhemos nossos pequenos na <strong>Maria Eurípedes</strong>, garantindo um ambiente seguro, cheio de amor e aprendizado, para que mães solo possam buscar o sustento de seus lares com o coração em paz.
+                    </p>
+                    <p>
+                        Para os jovens e adultos, abrimos as portas do mercado de trabalho oferecendo qualificação profissional real e gratuita — com nossos cursos de Informática, Barbearia, Cuidador de Idosos, Manicure e Música. Acreditamos no poder de dar as ferramentas certas para que cada indivíduo conquiste sua própria independência financeira.
+                    </p>
+                    <p class="mb-0">
+                        Toda essa obra nasceu do coração e da vivência de missões do Pastor Milton, que decidiu não fechar os olhos para a falta de oportunidades na nossa região. Hoje, de mãos dadas com voluntários e parceiros, provamos todos os dias que a solidariedade e a educação são as chaves mais poderosas para resgatar a cidadania.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-5 text-center">
+                <div class="moldura-criancas-sobre">
+                    <img src="assets/img-sobre/sobreCriancas.png" alt="Crianças da Ágape" class="img-fluid rounded-4 shadow-lg">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="faixa-impacto-numeros py-5">
+    <div class="container py-4">
+        <div class="row text-center">
+            
+            <div class="col-6 col-md-3 mb-4 mb-md-0">
+                <div class="item-contador">
+                    <i class="fa-solid fa-house-chimney icone-impacto"></i>
+                    <h3 class="numero-grande-impacto" data-target="500">+0</h3>
+                    <p class="legenda-impacto">FAMÍLIAS ATENDIDAS</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 mb-4 mb-md-0">
+                <div class="item-contador">
+                    <i class="fa-solid fa-book-open icone-impacto"></i>
+                    <h3 class="numero-grande-impacto" data-target="5">+0</h3>
+                    <p class="legenda-impacto">CURSOS GRATUITOS</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 mb-4 mb-md-0">
+                <div class="item-contador">
+                    <i class="fa-solid fa-calendar-check icone-impacto"></i>
+                    <h3 class="numero-grande-impacto" data-target="2016">0</h3>
+                    <p class="legenda-impacto">ANO DE FUNDAÇÃO</p>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="item-contador">
+                    <i class="fa-solid fa-heart-pulse icone-impacto"></i>
+                    <h3 class="numero-grande-impacto" data-target="1000">+0</h3>
+                    <p class="legenda-impacto">VIDAS TRANSFORMADAS</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="secao-voluntarios-sobre py-5">
+    <div class="container text-center">
+        
+        <div class="cabecalho-voluntarios mb-5">
+            <img src="assets/img-sobre/DetalheMaoFloarecer.png" alt="Ícone" class="icone-mao-voluntario mb-3">
+            <h2 class="titulo-voluntarios">A Frente da Diferença</h2>
+            <p class="subtitulo-voluntarios">Acreditamos no que realizamos juntos.</p>
+        </div>
+
+        <div id="carrossel-voluntarios" class="owl-carousel owl-theme">
+            
+            <div class="item">
+                <div class="card-voluntario-curto">
+                    <div class="foto-voluntario-caixa">
+                        <img src="assets/img-sobre/fotopastor.png" alt="Pastor Milton">
+                    </div>
+                    <h4 class="nome-voluntario">Pastor Milton</h4>
+                    <p class="cargo-voluntario text-muted">FUNDADOR E DIRETOR</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="card-voluntario-curto">
+                    <div class="foto-voluntario-caixa">
+                        <img src="assets/img-sobre/DESENVOLVEDORA-ONG.jpeg" alt="Voluntário">
+                    </div>
+                    <h4 class="nome-voluntario">Luisa Laura</h4>
+                    <p class="cargo-voluntario text-muted">DESENVOLVEDORA</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="card-voluntario-curto">
+                    <div class="foto-voluntario-caixa">
+                        <img src="https://i.pravatar.cc/300?img=13" alt="Voluntário">
+                    </div>
+                    <h4 class="nome-voluntario">Liam Irvines</h4>
+                    <p class="cargo-voluntario text-muted">ADMINISTRADOR</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="card-voluntario-curto">
+                    <div class="foto-voluntario-caixa">
+                        <img src="https://i.pravatar.cc/300?img=16" alt="Voluntária">
+                    </div>
+                    <h4 class="nome-voluntario">Diana Leslie</h4>
+                    <p class="cargo-voluntario text-muted">PROJETOS</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="cta-voluntarios-vermelho">
+    <div class="container">
+        <div class="row align-items-center">
+            
+            <div class="col-lg-8 col-md-12 text-center text-lg-start mb-4 mb-lg-0">
+                <h2 class="titulo-cta-impacto">
+                    Torne-se uma parte vital da Ágape & faça uma diferença real na vida de muitos!
+                </h2>
+            </div>
+
+            <div class="col-lg-4 col-md-12 text-center text-lg-end">
+                <a href="voluntarios.html" target="_blank" class="btn-voluntario-laranja">
+                    JUNTE-SE COMO VOLUNTÁRIO
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="ajuda-section">
+    <div class="container-ajuda">
+        <div class="texto-ajuda">
+            <h1 class="titulo-foto">Não Apenas Doe.<br>Faça Sua Ajuda Chegar a Quem Precisa!</h1>
+            <p class="subtitulo-foto">Cada contribuição transforma a realidade da nossa comunidade. Descubra as diferentes formas de apoiar a ONG Ágape Provisão e fazer parte dessa corrente do bem.</p>
+            
+            <div class="icones-container">
+                <div class="item-icone">
+                    <div class="bg-icone"><i class="fas fa-first-aid" style="color: #e74c3c;"></i></div>
+                    <span>Saúde</span>
+                </div>
+                <div class="item-icone">
+                    <div class="bg-icone"><i class="fas fa-book-open" style="color: #3498db;"></i></div>
+                    <span>Educação</span>
+                </div>
+                <div class="item-icone">
+                    <div class="bg-icone"><i class="fas fa-home" style="color: #f1c40f;"></i></div>
+                    <span>Acolhimento</span>
+                </div>
+            </div>
+        </div>
+
+
+    <div class="caixas-contato">
+
+        <details class="caixa-item" open>
+    <summary>
+        <span><i class="far fa-envelope"></i> Envie uma Mensagem</span>
+        <i class="fas fa-chevron-down seta"></i>
+    </summary>
+    <div class="conteudo-caixa">
+        <p>Quer acompanhar de pertinho e contribuir com essa ação incrível? Adoraríamos conversar com você!</p>
+        <p>
+            <i class="fas fa-at"></i> E-mail: <a href="mailto:agapeprovisao2017@gmail.com" class="link-clicavel">agapeprovisao2017@gmail.com</a><br>
+            <i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/5531991611202" target="_blank" class="link-clicavel">Fale direto com a ONG</a>
+        </p>
+    </div>
+</details>
+
+<details class="caixa-item">
+    <summary>
+        <span><i class="fas fa-box"></i> Envie Doações - Caixa Postal</span>
+        <i class="fas fa-chevron-down seta"></i>
+    </summary>
+    <div class="conteudo-caixa">
+        <p><strong>Recebemos doações de todo o mundo!</strong> Ficamos extremamente gratos pela sua ação, cada pacote que chega é um sorriso que se renova aqui na Ágape.</p>
+        <div class="dados-postal">
+            <p><i class="fas fa-map-marker-alt"></i> <strong>Caixa Postal:</strong> Rua Maria Rosa da Silva, 1074 - Mantiqueira<br>
+            <i class="fas fa-city"></i> <strong>Cidade:</strong> Belo Horizonte - MG<br>
+            <i class="fas fa-mail-bulk"></i> <strong>CEP:</strong> 31655-290</p>
+        </div>
+    </div>
+</details>
+
+<details class="caixa-item">
+    <summary>
+        <span><i class="fas fa-hand-holding-usd"></i> Contribuição Financeira</span>
+        <i class="fas fa-chevron-down seta"></i>
+    </summary>
+    <div class="conteudo-caixa text-center">
+        <p>Sua doação financeira nos ajuda a manter nossos cursos e o acolhimento das crianças.</p>
+        <div class="pix-area">
+            <img src="assets/pixong.png" alt="QR Code Pix" class="img-pix"></img>
+            <p class="chave-pix mt-2"><strong>Chave PIX (CNPJ):</strong> 28.098.526/0001-75</p>
+            <span class="badge bg-success">Escaneie para doar agora</span>
+        </div>
+    </div> 
+</section>
+
+<section class="google-reviews-section">
+    <div class="container">
+        <h2 class="titulo-google">O Que Dizem Sobre Nós</h2>
+        <p class="subtitulo-google">O carinho e o reconhecimento de quem acompanha a obra da Ágape de perto.</p>
+
+        <div class="google-header-card">
+            <div class="google-info">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" width="80">
+                <span class="txt-avaliacoes">Avaliações</span>
+            </div>
+            <a href="https://search.google.com/local/writereview?placeid=SEU_PLACE_ID" target="_blank" class="btn-avaliar-google">Avalie-nos no Google</a>
+        </div>
+
+        <div class="widget-google-container">
+             <script src="https://elfsightcdn.com/platform.js" async></script>
+             <div class="elfsight-app-f4b29c3a-71bf-4450-a40d-9a50b463300a" data-elfsight-app-lazy></div>
+        </div>
+    </div>
+</section>
+
+<section class="secao-dandara">
+    <div class="container d-flex justify-content-center">
+        <div class="card-dandara text-center">
+            <div class="topo-card">
+                <img src="assets/img-sobre/DetalheMaoFloarecer.png" alt="Ícone" class="icone-folha">
+                <span class="badge-dandara">OLHANDO PARA O FUTURO</span>
+            </div>
+            
+            <h2 class="titulo-dandara">Conheça o Projeto Dandara & Faça Parte Deste Novo Sonho!</h2>
+            
+            <p class="texto-dandara">
+                Nossa missão não para por aqui. Estamos construindo um novo capítulo na história da Ágape focado em expandir nosso impacto e transformar ainda mais realidades. Descubra o que estamos preparando para o amanhã.
+            </p>
+            
+            <a href="blog_agape.html#expansao-dandara" target="_blank" class="link-saiba-mais">
+                SAIBA MAIS <i class="fas fa-arrow-right"></i>
+            </a>
+            <div class="linha-decorativa"></div>
+        </div>
+    </div>
+    
+    <div class="ilustracao-esquerda d-none d-lg-block">
+        <img src="assets/img-sobre/criancas_fundo.png" alt="">
+    </div>
+
+    <div class="ilustracao-direita d-none d-lg-block">
+        <img src="assets/img-sobre/coracao_fundo.png" alt="">
+    </div>
+
+    <div class="ilustracao-topo-esq d-none d-lg-block">
+        <img src="assets/img-sobre/lapis.png" alt="">
+    </div>
+
+    <div class="ilustracao-meio-dir d-none d-lg-block">
+        <img src="assets/img-sobre/livro_fundo.png" alt="">
+    </div>
+
+    <div class="ilustracao-base-esq d-none d-lg-block">
+        <img src="assets/img-sobre/ilustra-lapis.png" alt="">
+    </div>
+
+</section>
+
+
+
+
+
+
+<script>
+const animarNumeros = () => {
+    const contadores = document.querySelectorAll('.numero-grande-impacto');
+    contadores.forEach(contador => {
+        const atualizar = () => {
+            const alvo = +contador.getAttribute('data-target');
+            const atual = +contador.innerText.replace('+', '');
+            const incremento = alvo / 100;
+
+            if (atual < alvo) {
+                contador.innerText = (contador.getAttribute('data-target') !== "2016" ? "+" : "") + Math.ceil(atual + incremento);
+                setTimeout(atualizar, 20);
+            } else {
+                contador.innerText = (contador.getAttribute('data-target') !== "2016" ? "+" : "") + alvo;
+            }
+        };
+        atualizar();
+    });
+};
+
+// Inicia a animação quando o bloco aparece na tela
+const observador = new IntersectionObserver((entries) => {
+    if(entries[0].isIntersecting) {
+        animarNumeros();
+        observador.disconnect();
+    }
+}, { threshold: 0.5 });
+
+observador.observe(document.querySelector('.faixa-impacto-numeros'));
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    var owl = $("#carrossel-voluntarios");
+    owl.owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        responsive: {
+            0: { items: 1 },
+            600: { items: 2 },
+            1000: { items: 4 }
+        }
+    });
+});
+</script>
+
+
+
+
+ <footer class="rodape-agape">
+        <div class="container">
+            
+            <div class="row pt-5 pb-4">
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h3 class="rodape-logo mb-3"><i class="fa-solid fa-hands-holding-child me-2 text-danger"></i>Ágape</h3>
+                    <p class="rodape-texto mb-4">
+                        Sua solidariedade é o combustível que mantém nossos sonhos acesos.
+                    </p>
+                    <div class="rodape-social">
+                        <a href="https://www.facebook.com/ong.agape.provisao.2025?locale=pt_BR"><i class="fa-brands fa-facebook-f"></i></a>
+                        
+                        
+                        <a href="https://www.instagram.com/ongagapebh/"><i class="fa-brands fa-instagram"></i></a>
+                       
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h4 class="rodape-titulo">Sobre Nós</h4>
+                    <ul class="rodape-links list-unstyled">
+                        <li><a href="#">Próximos Eventos</a></li>
+                        <li><a href="#">Últimas Causas</a></li>
+                        <li><a href="#">Nosso Blog</a></li>
+                        <li><a href="#">Fale Conosco</a></li>
+                        <li><a href="#">Quem Somos</a></li>
+                        <li><a href="#">Conecte-se</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h4 class="rodape-titulo">Nossos Parceiros</h4>
+                    <ul class="rodape-links list-unstyled">
+                        <li><a href="#">Doe para Ágape</a></li>
+                        <li><a href="#">Salve nossa Terra</a></li>
+                        <li><a href="#">Falta de Água</a></li>
+                        <li><a href="#">Recicle Melhor</a></li>
+                        
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h4 class="rodape-titulo">Explore</h4>
+                    <ul class="rodape-links list-unstyled">
+                       
+                        <li><a href="#">Nossos Programas</a></li>
+                        <li><a href="#">Crise Alimentar</a></li>
+                        <li><a href="#">Faça uma Doação</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                        <li><a href="#">Programas Globais</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="rodape-divisor">
+
+            <div class="row py-4 align-items-center">
+                
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="rodape-titulo">Fale Conosco</h4>
+                    <ul class="rodape-contato list-unstyled mt-3">
+                        <li class="mb-2">Rua Maria Rosa da Silva, 1074 - Mantiqueira,</li>
+                            <li> Belo Horizonte, MG - 31655-290</li>
+                        <li class="mb-2">Telefone: (31) 99161-1202</li>
+                        <li>agapeprovisao2017@gmail.com</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-8">
+                    <h4 class="rodape-titulo mb-3">Inscreva-se na nossa Newsletter</h4>
+                    <form class="d-flex flex-column flex-md-row rodape-newsletter">
+                        <input type="email" class="form-control me-md-3 mb-3 mb-md-0" placeholder="Digite seu E-mail" required>
+                        <button type="submit" class="btn btn-newsletter px-5">INSCREVER</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row mt-2 pb-3">
+                <div class="col-12 text-center">
+                    <p class="rodape-copyright mb-0">
+                        Copyright © 2026 ONG Ágape Provisão. Todos os direitos reservados.
+                    </p>
+                    <p class="rodape-copyright mb-0">
+                        Desenvolvido por Luisa Laura
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script>
+        // Agora a função recebe o ID de quem chamou ela
+        function copiarPix(idMensagem) { 
+            // Coloque o CNPJ real da ONG Ágape aqui
+            const chavePix = "28.098.526/0001-75"; 
+            
+            navigator.clipboard.writeText(chavePix).then(() => {
+                // O JavaScript procura exatamente a mensagem do botão que foi clicado
+                const mensagem = document.getElementById(idMensagem);
+                mensagem.style.display = "block"; 
+                
+                setTimeout(() => {
+                    mensagem.style.display = "none"; 
+                }, 5000); 
+            }).catch(err => {
+                console.error('Erro ao copiar PIX: ', err);
+                alert("A chave PIX da ONG é: " + chavePix);
+            });
+        }
+        </script>
+    
+    </body>
+    </html>

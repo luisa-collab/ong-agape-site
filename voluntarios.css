@@ -1,0 +1,272 @@
+/* =======================================================
+   1. TOPO E TÍTULOS (ESTILO ÁGAPE COM CARROSSEL BOOTSTRAP)
+   ======================================================= */
+   html {
+    scroll-behavior: smooth;
+}
+
+/* O CONTÊINER PAI: Define o tamanho e a área visível do banner */
+.banner-voluntarios-bs {
+    width: 100vw !important; /* Largura total da janela */
+    height: 390px !important; /* Altura definida */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    overflow: hidden; /* Corta excessos das imagens aumentadas */
+    background-color: #f3f3f3; /* Cor de fundo de segurança */
+}
+
+/* Estilo para o Carrossel ocupar todo o banner */
+#carouselVoluntarios,
+#carouselVoluntarios .carousel-inner,
+#carouselVoluntarios .carousel-item {
+    width: 100%;
+    height: 100%;
+}
+
+/* A DIV QUE CONTÉM A IMAGEM DE FUNDO (Dentro de cada item do carrossel) */
+.div-imagem-img {
+    background-image: url('assets/img-voluntarios/banner2.png');
+    image-rendering: -webkit-optimize-contrast;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Animação suave de 20 segundos indo e voltando */
+    animation: kenBurnsSingle 20s ease-in-out infinite alternate;
+    
+    backface-visibility: hidden;
+    will-change: transform;
+    
+}
+
+/* Keyframes ajustado para ser um zoom de "respiração" */
+@keyframes kenBurnsSingle {
+    0% {
+        transform: scale(1.0);
+    }
+    100% {
+        transform: scale(1.1); /* Aumenta 10% e depois volta suavemente */
+    }
+}
+
+/* --- DEFINIÇÃO DA ANIMAÇÃO SUTIL (@keyframes) --- */
+
+@keyframes kenBurnsSingle {
+    0% {
+        /* Começa no tamanho original */
+        transform: scale(1.0); 
+    }
+    50% {
+        /* No meio da animação (ex: aos 12.5s), a imagem atinge um zoom sutil.
+           Usei apenas '1.05' (5% de aumento) para ser bem delicado. Ajuste se quiser mais forte. */
+        transform: scale(1.05); 
+    }
+    100% {
+        /* Volta ao tamanho original para fechar o loop suavemente. */
+        transform: scale(1.0); 
+    }
+}
+
+/* Mantém o resto do seu estilo original para títulos e linha decorativa */
+.secao-titulo-voluntarios {
+    padding: 40px 0 20px !important;
+}
+
+.color-titulo-agape { color: #000 !important; font-family: 'Poppins', sans-serif; font-weight: 800; }
+.color-subtitulo-agape { color: #636e72 !important; font-family: 'Inter', sans-serif; }
+.destaque-azul { color: #1fa8e7 !important; font-weight: 800; }
+
+.linha-decorativa-agape {
+    width: 60px;
+    height: 4px;
+    background-color: #da2020;
+    border-radius: 2px;
+}
+
+/* =======================================================
+   2. BASE DOS CARDS (ESTILO COMUM)
+   ======================================================= */
+
+.card-modalidade-agape {
+    background: #ffffff !important; /* Força o fundo branco */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: 0.3s;
+    border: 1px solid #eee;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- CABEÇALHO DOS CARDS --- */
+.topo-card-vol {
+    background-color: #da2020; /* Vermelho padrão */
+    color: #ffffff !important;
+    padding: 20px;
+    text-align: center;
+}
+
+.topo-card-vol.azul-agape {
+    background-color: #1fa8e7; /* Azul Online */
+}
+
+.topo-card-vol i {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.topo-card-vol h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* --- CORPO DOS CARDS --- */
+.corpo-card-vol {
+    padding: 25px;
+    background: #fff;
+}
+
+.instrucao-vol {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* =======================================================
+   3. SEPARAÇÃO DE TAMANHOS (O QUE VOCÊ PEDIU)
+   ======================================================= */
+
+/* PRESENCIAL: Fica Slim (400px) */
+.card-presencial {
+    max-width: 400px !important;
+}
+
+/* ONLINE: Livre para você ajustar (mude o 400px se quiser maior) */
+.card-online {
+    max-width: 400px; 
+    min-height: 450px; 
+}
+
+/* =======================================================
+   4. ELEMENTOS INTERNOS (ÍCONES E LISTAS)
+   ======================================================= */
+
+/* Grid Presencial */
+.grid-especialidades {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.grid-especialidades span {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.grid-especialidades i {
+    color: #da2020;
+    margin-right: 5px;
+}
+
+/* Lista Online */
+.lista-online {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-online li {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.lista-online li::before {
+    content: '\f00c'; /* Ícone de check */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: #1fa8e7;
+}
+
+/* Botões */
+.btn-agape-vol {
+    width: 100%;
+    background-color: #da2020;
+    color: #fff !important;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: 0.3s;
+    
+}
+
+.btn-azul-vol {
+    background-color: #1fa8e7;
+}
+
+.btn-agape-vol:hover {
+    filter: brightness(0.9);
+    transform: translateY(-2px);
+}
+
+/* ONDE MEXER: Isso afeta APENAS o botão do card presencial */
+.card-presencial .btn-agape-vol {
+    margin-top: 70px !important; /* Aumente esse número para descer mais, diminua para subir */
+}
+
+/* --- BLOCO DE ENVIO DE VÍDEO --- */
+
+.secao-envio-video {
+    border-top: 5px solid #1fa8e7;
+    margin-top: 50px;
+}
+
+.card-upload-instrucoes {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed #333;
+    border-radius: 15px;
+}
+
+.btn-envio-expert {
+    background-color: #1fa8e7 !important;
+    color: #fff !important;
+    padding: 18px 40px !important;
+    border-radius: 50px !important;
+    font-weight: 800;
+    font-size: 1rem;
+    transition: 0.4s;
+    border: none;
+    box-shadow: 0 10px 20px rgba(31, 168, 231, 0.2);
+}
+
+.btn-envio-expert:hover {
+    background-color: #fff !important;
+    color: #1fa8e7 !important;
+    transform: scale(1.05);
+}
+
+.badge.bg-primary {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1fa8e7 !important;
+}

@@ -1,0 +1,669 @@
+
+
+/* =======================================================
+   ESTILO DO BANNER SOBRE NÓS (CÓDIGO LIMPO)
+   ======================================================= */
+   html {
+    scroll-behavior: smooth;
+}
+
+.banner-sobre-imersivo {
+    position: relative;
+    width: 100%;
+    height: 380px; /* Altura do banner */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* Corta o excesso do zoom */
+    background-color: #333; /* Fundo reserva */
+    z-index: 1;
+}
+
+/* Container da Imagem */
+.banner-zoom-fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+/* A Imagem Real */
+.img-zoom-elemento {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a foto preencher tudo sem esticar */
+    animation: zoomEfeito 20s linear infinite alternate;
+}
+
+/* Animação Ken Burns */
+@keyframes zoomEfeito {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+
+/* Camada Escura */
+.banner-cortina {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Escurece 50% */
+    z-index: -1;
+}
+
+/* Título */
+.titulo-banner-principal {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 5.5rem !important;
+    color: #ffffff !important;
+    font-weight: 700;
+    text-shadow: 2px 4px 15px rgba(0,0,0,0.5);
+    margin: 0;
+}
+
+/* =======================================================
+   ESTILO DO SEGUNDO BLOCO: SOBRE DETALHADO
+   ======================================================= */
+
+.secao-sobre-detalhada {
+    background-color: #ffffff;
+    margin-top: -70px !important; /* Puxa o bloco para cima */
+    position: relative;
+}
+
+/* Logo pequena no topo */
+.mini-logo-secao {
+    width: 45px;
+    height: auto;
+}
+
+.badge-topo-texto {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #636e72;
+    text-transform: uppercase;
+}
+
+/* Título imponente (Playfair Display) */
+.titulo-sobre-destaque {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 3.2rem;
+    color: #2c3e50;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+/* Subtítulo azulado */
+.lead-sobre {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #3b7197;
+    border-left: 4px solid #da2020; /* Linha de destaque vermelha lateral */
+    padding-left: 15px;
+}
+
+/* ALINHAMENTO DO TEXTO NO FINAL (JUSTIFICADO) */
+.texto-missao-alinhado p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #636e72;
+    text-align: justify; /* Faz o alinhamento reto no final das linhas */
+    margin-bottom: 20px;
+}
+
+/* Estilo da Imagem da Direita */
+.moldura-criancas-sobre img {
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.5s ease;
+    margin-top: 70px !important;
+}
+
+.moldura-criancas-sobre img:hover {
+    transform: scale(1.03); /* Leve movimento ao passar o mouse */
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 991px) {
+    .titulo-sobre-destaque { font-size: 2.2rem; }
+    .secao-sobre-detalhada { text-align: center; }
+    .lead-sobre { border-left: none; padding-left: 0; }
+    .texto-missao-alinhado p { text-align: center; } /* Centraliza no celular */
+}
+
+/* =======================================================
+   ESTILO DO BLOCO 3: NÚMEROS DE IMPACTO
+   ======================================================= */
+
+.faixa-impacto-numeros {
+    background-color: #f0f7ff; /* Azul clarinho idêntico à imagem */
+    margin-top: -30px !important;  /* Puxa o bloco para cima (subindo) */
+    padding-top: 30px !important;  /* Diminui o espaço interno no topo */
+    padding-bottom: 20px !important; /* Diminui o espaço interno embaixo */
+    
+    position: relative;
+}
+
+.faixa-impacto-numeros .container.py-4 {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.icone-impacto {
+    font-size: 2.2rem;
+    color: #c5d4f3; /* Cor dos ícones mais suave */
+    margin-bottom: 10px;
+}
+
+.numero-grande-impacto {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d3436; /* Cor escura elegante */
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.legenda-impacto {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #636e72;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+
+/* Ajuste Mobile */
+@media (max-width: 768px) {
+    .numero-grande-impacto { font-size: 2.5rem; }
+    .icone-impacto { font-size: 1.8rem; }
+}
+
+/* =======================================================
+   ESTILO DO BLOCO 4: VOLUNTÁRIOS
+   ======================================================= */
+
+.secao-voluntarios-sobre {
+    background-color: #ffffff;
+    padding-top: 60px !important;
+}
+
+.icone-mao-voluntario {
+    width: 60px; /* Tamanho do ícone da mão */
+    height: auto;
+}
+
+.titulo-voluntarios {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2.8rem;
+    color: #2d3436;
+    font-weight: 700;
+}
+
+.subtitulo-voluntarios {
+    font-size: 0.95rem;
+    color: #3b7197;
+    font-weight: 600;
+}
+
+/* Ajuste dos Cards e Fotos Menores */
+.card-voluntario-curto {
+    padding: 10px;
+}
+
+.foto-voluntario-caixa {
+    width: 130px; /* Reduzi o tamanho da foto como você pediu */
+    height: 130px;
+    margin: 0 auto 15px auto;
+    overflow: hidden;
+    border-radius: 15px; /* Cantos arredondados nos cards */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.foto-voluntario-caixa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a foto não amasse */
+}
+
+.nome-voluntario {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1.2rem;
+    color: #2d3436;
+    margin-bottom: 2px;
+}
+
+.cargo-voluntario {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.card-voluntario-curto:hover {
+    transform: translateY(-5px);
+}
+
+#carrossel-voluntarios .owl-nav button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #24a8f5 !important; /* Azul da sua marca */
+    color: white !important;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 20px !important;
+}
+
+#carrossel-voluntarios .owl-nav .owl-prev { left: -40px; }
+#carrossel-voluntarios .owl-nav .owl-next { right: -40px; }
+
+/* =======================================================
+   ESTILO DO BLOCO 5: CTA VERMELHO (IGUAL À FOTO)
+   ======================================================= */
+
+.cta-voluntarios-vermelho {
+    position: relative;
+    padding: 100px 0;
+    /* Substitua pelo caminho da sua imagem de árvores/céu */
+    background-image: linear-gradient(rgba(3, 3, 3, 0.195), rgba(0, 0, 0, 0.43)), url('assets/img-sobre/ceuvermelho.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efeito Parallax suave */
+    color: #ffffff;
+    overflow: hidden;
+    padding-bottom: 70px;
+}
+
+.titulo-cta-impacto {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #ffffff;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+    
+}
+
+/* O BOTÃO LARANJA IGUAL AO PRINT */
+.btn-voluntario-laranja {
+    display: inline-block;
+    background-color: #fa7204;
+    color: #ffffff !important;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 15px 35px;
+    border-radius: 5px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-voluntario-laranja:hover {
+    background-color: #ff0a0a;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 991px) {
+    .titulo-cta-impacto {
+        font-size: 2.2rem;
+    }
+    .cta-voluntarios-vermelho {
+        padding: 60px 20px;
+    }
+}
+
+
+/* Espaçamento para descer o bloco todo */
+.ajuda-section {
+    padding: 100px 0; /* Aumentei aqui para descer o bloco */
+    background-color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+.container-ajuda {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+/* Fonte do Título igual da foto */
+.titulo-foto {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    color: #2c3e50;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    max-width: 700px;
+    text-align: left;
+    padding-left: 40px;
+    width: 100%;
+}
+
+.subtitulo-foto {
+    font-size: 1.1rem;
+    color: #636e72;
+    max-width: 650px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    text-align: left;
+    padding-left: 40px;
+}
+
+/* Estilo das Caixinhas (Accordions) */
+.caixas-contato {
+    flex: 1;
+    margin-top: 40px; /* Desce as caixinhas em relação ao título */
+    margin-left: -20px;
+    display: flex;
+    flex-direction: column; /* Força uma caixinha a ficar embaixo da outra */
+    gap: 15px; /* Espaço entre as caixinhas */
+}
+
+.caixa-item {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+    width: 100%; 
+    display: block;
+}
+
+/* Efeito ao passar o mouse e quando aberto */
+.caixa-item summary {
+    padding: 20px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    color: #555;
+}
+
+/* O que você pediu: Ficar vermelho ao passar o mouse */
+.caixa-item summary:hover, 
+.caixa-item[open] summary {
+    color: #FF0000;
+}
+
+.caixa-item summary:hover .seta,
+.caixa-item[open] summary .seta {
+    color: #FF0000;
+    transform: rotate(180deg);
+}
+
+.conteudo-caixa {
+    padding: 0 20px 20px 20px;
+    color: #777;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Estilo dos Ícones de baixo */
+.icones-container {
+    display: flex;
+    gap: 80px;
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+    padding-left: 130px;
+  
+}
+
+.item-icone { text-align: center; font-size: 0.8rem; font-weight: bold; color: #888; }
+.bg-icone {
+font-size: 1.8rem; 
+margin-bottom: 10px;
+
+
+}
+
+.item-icone span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2d3436;
+}
+
+/* Estilo dos links dentro das caixinhas */
+.link-clicavel {
+    color: #3b7197;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.link-clicavel:hover {
+    color: #FF0000; /* Fica vermelho ao passar o mouse, combinando com o botão */
+    text-decoration: underline;
+}
+
+/* Estilo da área do Pix */
+.img-pix {
+    width: 150px; /* Tamanho bom para scanear */
+    height: auto;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.dados-postal {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #fa7204; /* Barrinha laranja de destaque */
+}
+
+/* CONTAINER PAI - Garante que o bloco ocupe a tela toda e centralize o conteúdo */
+.google-reviews-section {
+    width: 100%;
+    display: block; /* Garante que não herde flex de cima */
+    text-align: center; /* Centraliza textos e botões */
+    padding: 80px 0;
+    background-color: #ffffff;
+    clear: both; /* Limpa qualquer flutuação anterior */
+    padding: 30px 0 !important; /* Diminuído de 80px para 30px para achatar */
+}
+
+/* O CONTAINER DO BOOTSTRAP - Limita a largura e centraliza */
+.google-reviews-section .container {
+    width: 1140px;
+    margin: 0 auto !important; /* FORÇA o alinhamento no centro da página */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens dentro do flex */
+}
+
+/* CARD DO GOOGLE - Ajustando a largura para não ficar esticado nem no canto */
+.google-header-card {
+    background: #f8f9fa;
+    border-radius: 20px;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ocupa a largura total do container */
+    max-width: 1000px; /* Mas não passa de 1000px */
+    margin: 40px auto; /* Centraliza o card no meio */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* Ajuste para o Widget da Elfsight não fugir para a direita */
+.elfsight-app-f4b29c3a-71bf-4450-a40d-9a50b463300a {
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+
+/* FONTE IGUAL AO BLOCO "NÃO APENAS DOE" */
+.titulo-google {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2.8rem !important; /* Tamanho equilibrado */
+    color: #1a2b3c !important;
+    font-weight: 700;
+    line-height: 1.1; /* Linha mais junta para achatar */
+    margin-bottom: 10px;
+    max-width: 800px; /* Mesma largura que usamos no bloco de cima */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subtitulo-google {
+    font-family: 'Open Sans', sans-serif;
+    color: #636e72;
+    font-size: 1rem;
+    margin-bottom: 20px; /* Diminuído para subir o que vem abaixo */
+}
+
+/* ACHATANDO O CARD DO GOOGLE */
+.google-header-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 15px 40px; /* Diminuí o padding interno (estava 25px) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 900px; /* Um pouco mais estreito para ficar elegante */
+    margin: 20px auto !important; /* Margem menor para achatar o bloco */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.what-customers-say {
+    display: none; /* Se quiser achatar MESMO, podemos sumir com esse título em inglês que sobra */
+}
+
+.secao-dandara {
+    padding: 100px 0;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    margin-top: -70px !important; 
+    padding: 60px 0; /* Espaçamento externo da seção */
+}
+
+.card-dandara {
+    background-color: #a55eea; /* O roxo da imagem */
+    color: #ffffff !important; /* Força tudo branco */
+    padding: 19px 20px; /* Diminuído de 60px para 35px para achatar */
+    border-radius: 20px;
+    max-width: 400px; /* Diminuí a largura para ela não ficar "espahada" */
+    box-shadow: 0 10px 30px rgba(165, 94, 234, 0.25);
+    margin: 0 auto;
+}
+
+.topo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.icone-folha { width: 50px; height: auto; }
+
+.badge-dandara {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+
+.titulo-dandara {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2.2rem !important; /* Diminuído para caber na caixa menor */
+    color: #ffffff !important;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.texto-dandara {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95rem;
+    color: #ffffff !important;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+
+/* Link Saiba Mais com a linha laranja embaixo */
+.link-saiba-mais {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.link-saiba-mais:hover {
+    transform: translateX(10px); /* Move um pouquinho ao passar o mouse */
+}
+
+.linha-decorativa {
+    width: 120px;
+    height: 3px;
+    background-color: #fa7204; /* O laranja do detalhe */
+    margin: 10px auto 0 auto;
+}
+
+/* Posicionamento das Ilustrações (Desenhos ao lado) */
+.ilustracao-esquerda { 
+    position: absolute; 
+    left: 5%; top: 50%; 
+    transform: translateY(-50%); 
+    opacity: 0.2; 
+    width: 90px;
+    width: 190px;
+}
+
+.ilustracao-direita {
+     position: absolute; 
+     right: 25%; 
+     top: 50%; 
+     transform: translateY(-50%); 
+     opacity: 0.2; 
+     width: 50px; 
+     width: 180px;
+}
+
+.ilustracao-topo-esq {
+   position: absolute; 
+     right: 11%; 
+     top: 20%; 
+     transform: translateY(-10%); 
+     opacity: 0.2; 
+     width: 50px; 
+     width: 110px;
+}
+
+.ilustracao-meio-dir {
+    position: absolute; 
+     right: 11%; 
+     top: 80%; 
+     transform: translateY(-10%); 
+     opacity: 0.2; 
+     width: 150px;
+}
+
+    /* Garante que a imagem dentro da div ocupe todo o espaço dela */
+.ilustracao-esquerda img,
+.ilustracao-direita img,.ilustracao-topo-esq img, .ilustracao-meio-dir img, .ilustracao-base-esq img {
+    width: 100%;
+    height: auto;
+}
