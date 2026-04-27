@@ -247,7 +247,7 @@ a {
     
     /* AQUI ESTÁ O SEGREDO DO FORMATO VERTICAL */
     width: 380px;  /* Largura menor */
-    height: 450px; /* Altura bem maior (formato retrato) */
+    height: 610px; /* Altura bem maior (formato retrato) */
     z-index: 10;
 }
 

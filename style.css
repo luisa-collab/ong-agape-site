@@ -508,7 +508,7 @@ a {
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 50%); /* O segredo para cortar a borda meio a meio */
-    background-color: #1fa8e7; /* Laranja corporativo */
+    background-color: #1fa8e7; 
     color: #ffffff;
     padding: 2px 12px;
     font-size: 0.75rem;
@@ -1414,4 +1414,28 @@ s
 .link-fonte-pequeno a:hover {
     color: #000 !important; /* Escurece um pouco ao interagir */
     opacity: 1;
+}
+
+/* Efeito do tracinho piscando da máquina de escrever */
+#texto-inclusao-ceapa::after {
+    content: '|';
+    animation: piscar-cursor 0.8s infinite;
+    color: #003366; /* Pode colocar a cor principal da Ágape aqui */
+    font-weight: bold;
+}
+
+@keyframes piscar-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Atualize sua classe CSS com estes atributos */
+.titulo-documentos {
+    font-family: 'Playfair Display', sans-serif; /* Certifique-se de que a Poppins está no seu <head> */
+    font-weight: 800; /* Extra Bold para dar impacto */
+    font-size: 1.9rem; /* Um tamanho grande e legível */
+    color: #1f1e1e; /* Azul escuro institucional */
+    letter-spacing: -1px; /* Deixa o título mais "apertado" e moderno */
+    margin-bottom: 1.5rem;
+    text-transform: none; /* Mantém letras maiúsculas e minúsculas naturais */
 }

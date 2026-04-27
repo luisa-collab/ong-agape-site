@@ -248,7 +248,7 @@
 
 <!-- SEÇÃO DE CAUSAS EM DESTAQUE -->
 
-<section class="secao-causas py-5">
+<section id="ultimas-causas" class="py-5">
         <div class="container py-5">
             
             <div class="text-center mb-5">
@@ -263,66 +263,100 @@
                 
                 <div class="col-lg-4 col-md-6">
                     <div class="card-causa h-100 d-flex flex-column">
+                        
                         <div class="imagem-causa-wrapper">
-                            <img src="assets/img-Inicio/expansaodandara.png">
+                            <img src="assets/img-Inicio/expansaodandara.png" alt="Expansão Dandara" class="img-fluid w-100">
                             <div class="badge-porcentagem">80%</div>
                         </div>
+                        
                         <div class="corpo-causa flex-grow-1 text-center p-4">
                             <h3 class="titulo-causa"><a href="#">Projeto Dandara</a></h3>
                             <p class="categoria-causa">Expansão & Futuro</p>
-                            <p class="texto-causa">Um novo horizonte para a Ágape: a construção de um espaço dedicado ao acolhimento integral e suporte educacional para transformar realidades.</p>
+                            <p class="texto-causa">Um novo horizonte para a Ágape: a construção de um espaço dedicado ao acolhimento integral e suporte educacional para transformar realidades. Nosso objetivo é fechar as portas da vulnerabilidade e transformar a realidade de cada criança e famílias atendidas.Tá esperando o que para fazer parte dessa transformação?</p>
                             
                             <div class="stats-causa d-flex justify-content-center gap-3 mt-4 mb-3">
-                                <span><i class="fa-regular fa-circle-check"></i> Objetivo Inicial: R$10.000</span>
-                                <span><i class="fa-solid fa-chart-line"></i> Arrecadado: R$00.000</span>
+                                <span><i class="fa-regular fa-circle-check"></i> Objetivo: R$ 10.000</span>
+                                <span><i class="fa-solid fa-chart-line"></i> Arrecadado: R$ 0,00</span>
                             </div>
-                        </div>
-                        <a href="#" class="btn btn-doar-card w-100 text-uppercase fw-bold py-3">Doe Agora</a>
-                    </div>
-                </div>
-
+                            
+                            <div class="d-flex flex-column align-items-center mt-3">
+                                <button onclick="copiarPix('mensagem-pix-dandara')" class="btn btn-doar-card w-100 text-uppercase fw-bold py-3 border-0">
+                                    Doe Agora
+                                </button>
+                                
+                                <div id="mensagem-pix-dandara" style="display: none; color: #0f0f0f; font-size: 0.85rem; margin-top: 8px; font-weight: bold; text-align: center;">
+                                    CNPJ Copiado! Vá em 'Pagar com PIX' no seu banco.
+                                </div>
+                            </div>
+                        </div> 
+                    </div> 
+                </div> 
+            
+            
                 <div class="col-lg-4 col-md-6">
                     <div class="card-causa h-100 d-flex flex-column">
+                        
                         <div class="imagem-causa-wrapper">
                             <img src="assets/img-Inicio/mantimentos.png" alt="Alimentar Crianças" class="img-fluid w-100">
                             <div class="badge-porcentagem">50%</div>
                         </div>
+                        
                         <div class="corpo-causa flex-grow-1 text-center p-4">
                             <h3 class="titulo-causa"><a href="#">Acolhimento & Necessidades Básicas</a></h3>
-                            <p class="categoria-causa">Alimentos, Fraudas, Brinquedos, Roupas, Livros...</p>
-                            <p class="texto-causa"> Sua doação garante o essencial: desde o alimento na mesa e fraldas para o conforto, até livros e brinquedos que estimulam o sonho e o aprendizado de cada criança assistida. </p>
+                            <p class="categoria-causa">Alimentos, Fraldas, Brinquedos, Roupas...</p>
+                            <p class="texto-causa">Sua doação garante o essencial: desde o alimento na mesa e fraldas para o conforto, até livros e brinquedos que estimulam o sonho e o aprendizado de cada criança assistida; Garantindo um futuro mais igualitário e inclusivo.</p>
                             
                             <div class="stats-causa d-flex justify-content-center gap-3 mt-4 mb-3">
-                                <span><i class="fa-regular fa-circle-check"></i> Objetivo: $10.000</span>
-                                <span><i class="fa-solid fa-chart-line"></i> Arrecadado: R$0.000</span>
+                                <span><i class="fa-regular fa-circle-check"></i> Objetivo: R$ 10.000</span>
+                                <span><i class="fa-solid fa-chart-line"></i> Arrecadado: R$ 0,00</span>
+                            </div>
+                            
+                            <div class="d-flex flex-column align-items-center mt-3">
+                                <button onclick="copiarPix('mensagem-pix-acolhimento')" class="btn btn-doar-card w-100 text-uppercase fw-bold py-3 border-0">
+                                    Doe Agora
+                                </button>
+                                
+                                <div id="mensagem-pix-acolhimento" style="display: none; color: #0a0a0a; font-size: 0.85rem; margin-top: 8px; font-weight: bold; text-align: center;">
+                                    CNPJ Copiado! Vá em 'Pagar com PIX' no seu banco.
+                                </div>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-doar-card w-100 text-uppercase fw-bold py-3">Doe Agora</a>
                     </div>
                 </div>
-
+            
+            
                 <div class="col-lg-4 col-md-6">
                     <div class="card-causa h-100 d-flex flex-column">
+                        
                         <div class="imagem-causa-wrapper">
                             <img src="assets/img-Inicio/adoteUmEstudanteOng1.jpeg" alt="Educação para Pessoas" class="img-fluid w-100">
                             <div class="badge-porcentagem">40%</div>
                         </div>
+                        
                         <div class="corpo-causa flex-grow-1 text-center p-4">
                             <h3 class="titulo-causa"><a href="#">Adote um Estudante</a></h3>
-                            <p class="categoria-causa">Educação</p>
-                            <p class="texto-causa">Sua contribuição mantém nossas oficinas de Informática, Inglês e Reforço Escolar. Proporcionamos as ferramentas e o ensino necessários para que jovens e adultos da nossa comunidade conquistem novas oportunidades no mercado de trabalho.</p>
+                            <p class="categoria-causa">Educação & Inclusão</p>
+                            <p class="texto-causa">Sua contribuição é a chave para manter vivas nossas oficinas de Informática, Inglês e Reforço Escolar. Muito além de aulas, nós proporcionamos um ambiente seguro, as ferramentas adequadas e o ensino qualificado para que jovens e adultos da nossa comunidade descubram e apliquem seus talentos.</p>
                             
                             <div class="stats-causa d-flex justify-content-center gap-3 mt-4 mb-3">
                                 <span><i class="fa-regular fa-circle-check"></i> Objetivo: R$ 7.000</span>
-                                <span><i class="fa-solid fa-chart-line"></i> Arrecadado: $0.000</span>
+                                <span><i class="fa-solid fa-chart-line"></i> Arrecadado: R$ 0,00</span>
+                            </div>
+                            
+                            <div class="d-flex flex-column align-items-center mt-3">
+                                <button onclick="copiarPix('mensagem-pix-estudante')" class="btn btn-doar-card w-100 text-uppercase fw-bold py-3 border-0">
+                                    Doe Agora
+                                </button>
+                                
+                                <div id="mensagem-pix-estudante" style="display: none; color: #0d0e0d; font-size: 0.85rem; margin-top: 8px; font-weight: bold; text-align: center;">
+                                    CNPJ Copiado! Vá em 'Pagar com PIX' no seu banco.
+                                </div>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-doar-card w-100 text-uppercase fw-bold py-3">Doe Agora</a>
                     </div>
                 </div>
-
+            
             </div>
-        </div>
     </section>
 
     <!-- SEÇÃO DE PARCEIROS E APOIADORES -->
@@ -392,7 +426,7 @@
                 <div class="col-6 col-md-3 mb-4 mb-md-0 border-end-md">
                     <div class="contador-item">
                         <div class="icone-contador"><i class="fa-solid fa-hand-holding-dollar"></i></div>
-                        <h3 class="numero-contador" data-target="98520">0</h3>
+                        <h3 class="numero-contador" data-target="58520">0</h3>
                         <p class="legenda-contador">Recursos Aplicados (R$)</p>
                     </div>
                 </div>
@@ -408,7 +442,7 @@
                 <div class="col-6 col-md-3 mb-4 mb-md-0 border-end-md">
                     <div class="contador-item">
                         <div class="icone-contador"><i class="fa-solid fa-hand-holding-heart"></i></div>
-                        <h3 class="numero-contador" data-target="84">0</h3>
+                        <h3 class="numero-contador" data-target="14">0</h3>
                         <p class="legenda-contador">Voluntários Ativos</p>
                     </div>
                 </div>
@@ -431,6 +465,29 @@
             </div>
         </div>
 
+            </div>
+        </div>
+    </section>
+
+    <section id="bloco-inclusao" class="py-4 bg-light">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                
+                <div class="col-lg-5 mb-4 mb-lg-0 text-center">
+                    
+                    <div class="ratio ratio-16x9 shadow-lg rounded overflow-hidden mx-auto" style="border: 4px solid #fff; max-width: 350px;">
+                        <video src="assets/img-Inicio/videoInclusao.mp4" autoplay loop muted playsinline style="object-fit: cover; object-position: center 29%; width: 100%; height: 100%; display: block;"></video>
+                    </div>
+                    
+                </div>
+    
+                <div class="col-lg-7 ps-lg-5 mt-3 mt-lg-0">
+                    <h2 class="titulo-documentos mb-4">Um Salto Histórico para a Inclu<span style="color: #f01a1a;">são</span></h2>
+                    <div class="caixa-maquina-escrever">
+                        <p id="texto-inclusao-ceapa" class="texto-causa fw-medium" style="min-height: 150px; font-size: 1.1rem; line-height: 1.8;"></p>
+                    </div>
+                </div>
+    
             </div>
         </div>
     </section>
@@ -475,6 +532,28 @@
         });
     </script>
 
+<script>
+    // === EFEITO MÁQUINA DE ESCREVER ===
+    document.addEventListener("DOMContentLoaded", function() {
+        // O texto impactante sobre a Ágape e a CEAPA
+        const mensagemInclusao = "Para a ONG Ágape, inclusão significa ação transformadora. A chegada da parceria com a CEAPA eleva o nosso trabalho a um novo patamar de excelência. Estamos unindo forças para garantir que a nossa creche ofereça um ambiente seguro e especializado, preparado para acolher as necessidades e os talentos de cada criança. Mais do que cuidar, nossa missão é integrar, educar e provar que, juntos, construímos um futuro sem barreiras. Tá esperando o que para fazer parte dessa transformação? Junte-se a nós nessa jornada de inclusão e amor incondicional.";
+        
+        const elementoTexto = document.getElementById("texto-inclusao-ceapa");
+        let contadorLetras = 0;
+
+        function digitarTexto() {
+            if (contadorLetras < mensagemInclusao.length) {
+                elementoTexto.innerHTML += mensagemInclusao.charAt(contadorLetras);
+                contadorLetras++;
+                setTimeout(digitarTexto, 35); // 35 é a velocidade. Diminua para ficar mais rápido, aumente para mais lento.
+            }
+        }
+
+        // Dá um pequeno atraso de meio segundo antes de começar a digitar para dar tempo da pessoa rolar a tela
+        setTimeout(digitarTexto, 500);
+    });
+</script>
+
 
  <footer class="rodape-agape">
         <div class="container">
@@ -498,23 +577,22 @@
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                     <h4 class="rodape-titulo">Sobre Nós</h4>
                     <ul class="rodape-links list-unstyled">
-                        <li><a href="#">Próximos Eventos</a></li>
-                        <li><a href="#">Últimas Causas</a></li>
-                        <li><a href="#">Nosso Blog</a></li>
-                        <li><a href="#">Fale Conosco</a></li>
-                        <li><a href="#">Quem Somos</a></li>
-                        <li><a href="#">Conecte-se</a></li>
+                        
+                        <li><a href="#ultimas-causas">Últimas Causas</a></li>
+                        <li><a href="blog_agape.html" target="_blank"> Nosso Blog</a></li>
+                        <li><a href="sobre.html" target="_blank">Quem Somos</a></li>
+                        <li><a href="cadastro-escolar.html" target="_blank">Cadastro Escolar</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                     <h4 class="rodape-titulo">Nossos Parceiros</h4>
                     <ul class="rodape-links list-unstyled">
-                        <li><a href="#">Doe para Ágape</a></li>
-                        <li><a href="#">Salve nossa Terra</a></li>
-                        <li><a href="#">Falta de Água</a></li>
-                        <li><a href="#">Recicle Melhor</a></li>
-                        <li><a href="#">Plante Árvores</a></li>
+                        <li><a href="doacao.html" target="_blank">Doe para Ágape</a></li>
+                        <li><a href="https://prefeitura.pbh.gov.br/" target="_blank">Prefeitura de Belo Horizonte</a></li>
+                        <li><a href="https://www.seguranca.mg.gov.br/index.php/prevencao/programas/central-de-acompanhamento-de-alternativas-ceapa" target="_blank">CEAPA</a></li>
+                        <li><a href="https://www.caixa.gov.br/empresa/fgts-empresas/SEFIP-GRF/Paginas/default.aspx" target="_blank">SEFIP</a></li>
+                        
                     </ul>
                 </div>
 
@@ -522,11 +600,11 @@
                     <h4 class="rodape-titulo">Explore</h4>
                     <ul class="rodape-links list-unstyled">
                        
-                        <li><a href="#">Nossos Programas</a></li>
-                        <li><a href="#">Crise Alimentar</a></li>
-                        <li><a href="#">Faça uma Doação</a></li>
-                        <li><a href="#">Imprensa</a></li>
-                        <li><a href="#">Programas Globais</a></li>
+                        <li><a href="cursos.html" target="_blank">Nossos Cursos</a></li>
+                        <li><a href="blog_agape.html#inclusao" target="_blank">Inclusão</a></li>
+                        <li><a href="doacao.html" target="_blank">Faça uma Doação</a></li>
+                        <li><a href="voluntarios.html" target="_blank">Seja um Voluntário</a></li>
+                       
                     </ul>
                 </div>
             </div>
@@ -546,10 +624,27 @@
                 </div>
 
                 <div class="col-lg-8">
-                    <h4 class="rodape-titulo mb-3">Inscreva-se na nossa Newsletter</h4>
-                    <form class="d-flex flex-column flex-md-row rodape-newsletter">
-                        <input type="email" class="form-control me-md-3 mb-3 mb-md-0" placeholder="Digite seu E-mail" required>
-                        <button type="submit" class="btn btn-newsletter px-5">INSCREVER</button>
+                    <h4 class="rodape-titulo mb-3">Mande uma mensagem para nós</h4>
+                    
+                    <form action="https://formsubmit.co/agapeprovisao2017@gmail.com" method="POST">
+                        
+                        <div class="d-flex flex-column gap-3">
+                            
+                            <input type="email" name="email" class="form-control" placeholder="Seu e-mail de contato" required>
+                            
+                            <textarea name="mensagem" class="form-control" rows="3" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                            
+                            <div>
+                                <button type="submit" class="btn btn-newsletter px-5 py-2 fw-bold">ENVIAR MENSAGEM</button>
+                            </div>
+                            
+                        </div>
+                
+                        <input type="hidden" name="_subject" value="Nova mensagem enviada pelo site da Ágape!">
+                        
+                        <input type="hidden" name="_captcha" value="false">
+                        
+                        <input type="hidden" name="_template" value="table">
                     </form>
                 </div>
             </div>
